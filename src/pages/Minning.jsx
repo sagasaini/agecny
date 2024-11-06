@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./minning.css";
 import Slider from 'react-slick';
 import group from '../assets/images/Group 145.png'
-import group2 from '../assets/images/Group 146.png'
-import { FaInstagram } from "react-icons/fa6";
-import { FaTiktok } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa6";
-import logo from '../assets/images/logo (2).png'
+// import group2 from '../assets/images/Group 146.png'
+// import { FaInstagram } from "react-icons/fa6";
+// import { FaTiktok } from "react-icons/fa";
+// import { FaLinkedinIn } from "react-icons/fa6";
+// import logo from '../assets/images/logo (2).png'
 
 import background from '../assets/images/minning.png'
 

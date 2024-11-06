@@ -1,6 +1,7 @@
+// eslint-disable-next-line 
 import React from 'react';
 import './Consulting.css'; // Create this CSS file for styling
-import image1 from '../assets/images/Group 145.png'
+// import image1 from '../assets/images/Group 145.png'
 import image2 from '../assets/images/Group 146.png'
 
 import Slider from 'react-slick';
@@ -13,7 +14,7 @@ import logo from '../assets/images/logo (2).png'
 import apex from '../assets/images/apex.png'
 import apex2 from '../assets/images/apex2.png'
 import group from '../assets/images/Group 145.png'
-import group2 from '../assets/images/Group 146.png'
+// import group2 from '../assets/images/Group 146.png'
 import tacle1 from '../assets/images/tacle1.png'
 import tackle2 from '../assets/images/tackle2.png'
 import tackle1 from '../assets/images/tackle1.png'
