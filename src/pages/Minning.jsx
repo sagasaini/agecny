@@ -3,13 +3,78 @@ import "./minning.css";
 import Slider from 'react-slick';
 import group from '../assets/images/Group 145.png'
 // import group2 from '../assets/images/Group 146.png'
-// import { FaInstagram } from "react-icons/fa6";
-// import { FaTiktok } from "react-icons/fa";
-// import { FaLinkedinIn } from "react-icons/fa6";
-// import logo from '../assets/images/logo (2).png'
+import { FaInstagram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+import logo from '../assets/images/logo (2).png'
 
 import background from '../assets/images/minning.png'
+import vector from '../assets/images/Vector 47.png'
 
+import open1 from '../assets/images/open1.png'
+import open2 from '../assets/images/open2.png'
+import open3 from '../assets/images/open3.png'
+import open4 from '../assets/images/open4.png'
+import open5 from '../assets/images/open5.png'
+import open6 from '../assets/images/open6.png'
+import open7 from '../assets/images/open7.png'
+import open8 from '../assets/images/open8.png'
+import open9 from '../assets/images/open9.png'
+import open10 from '../assets/images/open10.png'
+import open11 from '../assets/images/open11.png'
+import optimization1 from '../assets/images/optimization1.png'
+import optimization2 from '../assets/images/optimization2.png'
+import optimization3 from '../assets/images/optimization3.png'
+import optimization4 from '../assets/images/optimization4.png'
+import optimization5 from '../assets/images/optimization5.png'
+import optimization6 from '../assets/images/optimization6.png'
+import optimization7 from '../assets/images/optimization7.png'
+
+import mine1 from '../assets/images/mine1.png'
+import mine2 from '../assets/images/mine2.png'
+import mine3 from '../assets/images/mine3.png'
+import mine4 from '../assets/images/mine4.png'
+import mine5 from '../assets/images/mine5.png'
+import mine6 from '../assets/images/mine6.png'
+import mine7 from '../assets/images/mine7.png'
+import mine8 from '../assets/images/mine8.png'
+import mine9 from '../assets/images/mine9.png'
+import mine10 from '../assets/images/mine10.png'
+import mine11 from '../assets/images/mine11.png'
+import mine12 from '../assets/images/mine12.png'
+import mine13 from '../assets/images/mine13.png'
+import mine14 from '../assets/images/mine14.png'
+
+import method1 from '../assets/images/method1.png'
+import method2 from '../assets/images/method2.png'
+import method3 from '../assets/images/method3.png'
+
+import project1 from '../assets/images/project1.png'
+import project2 from '../assets/images/project2.png'
+import project3 from '../assets/images/project3.png'
+import project4 from '../assets/images/project4.png'
+import project5 from '../assets/images/project5.png'
+import project6 from '../assets/images/project6.png'
+
+import modal1 from '../assets/images/modal1.png'
+import modal2 from '../assets/images/modal2.png'
+import modal3 from '../assets/images/modal3.png'
+import modal4 from '../assets/images/modal4.png'
+import modal5 from '../assets/images/modal5.png'
+import modal6 from '../assets/images/modal6.png'
+import modal7 from '../assets/images/modal7.png'
+import modal8 from '../assets/images/modal8.png'
+import modal9 from '../assets/images/modal9.png'
+
+import minning1 from '../assets/images/minnings1.png'
+import minning2 from '../assets/images/minnings2.png'
+import minning3 from '../assets/images/minnings3.png'
+import minning4 from '../assets/images/minnings4.png'
+import minning5 from '../assets/images/minnings5.png'
+import minning6 from '../assets/images/minnings6.png'
+import minning7 from '../assets/images/minnings7.png'
+import minning8 from '../assets/images/minnings8.png'
+import minning9 from '../assets/images/minnings9.png'
 
 export default function Main() {
 
@@ -37,57 +102,57 @@ export default function Main() {
   
     const cards = [
       {
-        imageUrl: '/images/planning1.jpg',
+        imageUrl: open1,
         title: 'Strategic planning and growth',
         description: 'Strategic planning and growth path to capture economic value.',
       },
       {
-        imageUrl: '/images/planning2.jpg',
+        imageUrl: open2,
         title: 'Open pit mine phases designs',
         description: 'Open pit mine phases designs at different levels of accuracy.',
       },
       {
-        imageUrl: '/images/planning3.jpg',
+        imageUrl: open3,
         title: 'Haulage and access systems',
         description: 'Design and comparison of haulage and access systems in subway mines.',
       },
       {
-        imageUrl: '/images/planning4.jpg',
+        imageUrl: open4,
         title: 'Mining sequence planning',
         description: 'Mining sequence and long and short-term production planning.',
       },
       {
-        imageUrl: '/images/planning5.jpg',
+        imageUrl: open5,
         title: 'Estimate of mining equipment fleet',
         description: 'Estimate of mining equipment fleet, CAPEX and OPEX.',
       },
       {
-        imageUrl: '/images/planning6.jpg',
+        imageUrl: open6,
         title: 'Mineral Reserves estimation',
         description: 'Estimation and certification of Mineral Reserves (GPI).',
       },
       {
-        imageUrl: '/images/planning7.jpg',
+        imageUrl: open7,
         title: 'Business planning support',
         description: 'Business planning and management support systems.',
       },
       {
-        imageUrl: '/images/planning8.jpg',
+        imageUrl: open8,
         title: 'Graphic tool for planning',
         description: 'Creation of graphic tool for integrated planning and decision making.',
       },
       {
-        imageUrl: '/images/planning9.jpg',
+        imageUrl: open9,
         title: 'Mina Planning Parameters',
         description: 'Analysis of inputs and Mina Planning Parameters.',
       },
       {
-        imageUrl: '/images/planning10.jpg',
+        imageUrl: open10,
         title: 'CAD and 3D systems',
         description: 'CAD and 3D systems for support analysis and mining planning.',
       },
       {
-        imageUrl: '/images/planning11.jpg',
+        imageUrl: open11,
         title: 'Data processing',
         description: 'Data processing: "Data Exploratory Technique".',
       },
@@ -95,37 +160,37 @@ export default function Main() {
 
     const cardss = [
       {
-        imageUrl: '/images/optimization1.jpg',
+        imageUrl: optimization1,
         title: 'Integrated Mine - Plant and Mine Dump Capacity Optimization',
         description: 'Mining sequence and strategic filling of dump(s).',
       },
       {
-        imageUrl: '/images/optimization2.jpg',
+        imageUrl: optimization2,
         title: 'Congestion and Operational Risk Analysis',
         description: 'Traffic Optimization at Ramps and Accesses.',
       },
       {
-        imageUrl: '/images/optimization3.jpg',
+        imageUrl: optimization3,
         title: 'Diagnosis of the Current Mining Optimization and Operational System',
         description: 'Evaluation of existing processes to enhance efficiency.',
       },
       {
-        imageUrl: '/images/optimization4.jpg',
+        imageUrl: optimization4,
         title: 'Generation and Execution of Ideas to Improve the Current Process',
         description: 'Innovative strategies for process improvement.',
       },
       {
-        imageUrl: '/images/optimization5.jpg',
+        imageUrl: optimization5,
         title: 'Consulting and Modeling for Mining Simulation',
         description: 'Loading System, Haulers, Maintenance of Roads / Auxiliary Equipment.',
       },
       {
-        imageUrl: '/images/optimization6.jpg',
+        imageUrl: optimization6,
         title: 'Strategic Mining Plans and Cut-Off Grade Optimization',
         description: 'Optimization for the Quest for Mining Asset Value.',
       },
       {
-        imageUrl: '/images/optimization7.jpg',
+        imageUrl: optimization7,
         title: 'Material Haulage Systems',
         description: 'Automation studies (PLC), optimizing haulage belts, and slope stability assistance.',
       },
@@ -133,72 +198,72 @@ export default function Main() {
   
     const solution = [
       {
-        imageUrl: '/images/underground1.jpg',
+        imageUrl: mine1,
         title: 'Selection of Mining Method',
         description: 'Choosing mining method based on orebody and economic viability.',
       },
       {
-        imageUrl: '/images/underground2.jpg',
+        imageUrl: mine2,
         title: 'Knowledge and Benchmarking',
         description: 'Strategic room and pillar mining for resource optimization.',
       },
       {
-        imageUrl: '/images/underground3.jpg',
+        imageUrl: mine3,
         title: 'Analysis and Optimization',
         description: 'Optimizing mining operations for safety and efficiency.',
       },
       {
-        imageUrl: '/images/underground4.jpg',
+        imageUrl: mine4,
         title: 'Underground Mining Plan',
         description: 'Developing mining plan with safety measures and resources.',
       },
       {
-        imageUrl: '/images/underground5.jpg',
+        imageUrl: mine5,
         title: 'Material Handling',
         description: 'Efficient transportation of materials within the mine.',
       },
       {
-        imageUrl: '/images/underground6.jpg',
+        imageUrl: mine6,
         title: 'Auxiliary Operations',
         description: 'Support operations for underground mining.',
       },
       {
-        imageUrl: '/images/underground7.jpg',
+        imageUrl: mine7,
         title: 'Estimation of Mineral Resources',
         description: 'Resource estimation for planning and execution.',
       },
       {
-        imageUrl: '/images/underground8.jpg',
+        imageUrl: mine8,
         title: 'Underground Mining Plan',
         description: 'Detailed planning of underground mining processes.',
       },
       {
-        imageUrl: '/images/underground9.jpg',
+        imageUrl: mine9,
         title: 'Planning Parameters',
         description: 'Key parameters for effective underground mining.',
       },
       {
-        imageUrl: '/images/underground10.jpg',
+        imageUrl: mine10,
         title: 'Methods of Underground Mining',
         description: 'Choosing suitable mining methods for the underground setup.',
       },
       {
-        imageUrl: '/images/underground11.jpg',
+        imageUrl: mine11,
         title: 'Cut-Off Grade - Dilution',
         description: 'Setting grade thresholds for economic mining.',
       },
       {
-        imageUrl: '/images/underground12.jpg',
+        imageUrl: mine12,
         title: 'Mining Recovery',
         description: 'Maximizing recovery rates from mining operations.',
       },
       {
-        imageUrl: '/images/underground13.jpg',
+        imageUrl: mine13,
         title: 'Production Programming and Execution',
         description: 'Programming and execution of mining tasks.',
       },
       {
-        imageUrl: '/images/underground14.jpg',
+        imageUrl: mine14,
         title: 'Design and Comparison',
         description: 'Comparing various mining methods for efficiency.',
       },
@@ -217,7 +282,7 @@ export default function Main() {
           "Ore Handling Design",
           "Engineering Design"
         ],
-        imageUrl: "path/to/your/image1.jpg"
+        imageUrl: method1
       },
       {
         title: "Sub Level Caving",
@@ -231,7 +296,7 @@ export default function Main() {
           "Ore Handling Design",
           "Engineering Design"
         ],
-        imageUrl: "path/to/your/image2.jpg"
+        imageUrl: method2
       },
       {
         title: "Block Caving",
@@ -245,71 +310,71 @@ export default function Main() {
           "Material Handling Design",
           "Engineering Design"
         ],
-        imageUrl: "path/to/your/image3.jpg"
+        imageUrl: method3
       }
     ];
     const proto = [
       {
-        imageUrl: '/path/to/image1.jpg',
+        imageUrl: project1,
         title: 'Project Evaluation: PEA - Conceptual, Pre-Feasibility and Feasibility'
       },
       {
-        imageUrl: '/path/to/image2.jpg',
+        imageUrl: project2,
         title: 'Characterization of the ore body from a value standpoint'
       },
       {
-        imageUrl: '/path/to/image3.jpg',
+        imageUrl: project3,
         title: 'Estimation of mineral resources and reserves'
       },
       {
-        imageUrl: '/path/to/image4.jpg',
+        imageUrl: project4,
         title: 'Technical reports - Open pit and underground mining QPs'
       },
       {
-        imageUrl: '/path/to/image5.jpg',
+        imageUrl: project5,
         title: 'Technical management and research consulting'
       },
       {
-        imageUrl: '/path/to/image6.jpg',
+        imageUrl: project6,
         title: 'Engineering and resource management services'
       }
     ];
 
     const geologicalCards = [
       {
-        imageUrl: 'path/to/topographic-info.jpg',
+        imageUrl: modal1,
         title: 'Integration of topographic information to the national network.',
       },
       {
-        imageUrl: 'path/to/database-management.jpg',
+        imageUrl: modal2,
         title: 'Information unification and advanced database management.',
       },
       {
-        imageUrl: 'path/to/qa-qc.jpg',
+        imageUrl: modal3,
         title: 'Review of QA/QC procedures, Gathering of Findings and Opportunities.',
       },
       {
-        imageUrl: 'path/to/data-analysis.jpg',
+        imageUrl: modal4,
         title: 'Exploratory Analysis of Uni and Multivariable Information. Data Science for Big Data Jobs.',
       },
       {
-        imageUrl: 'path/to/geological-modeling.jpg',
+        imageUrl: modal5,
         title: 'Structural geological modeling and different types of domains. Geo Metallurgical models focused on recovery calculations: R. Mass - Modifying factors.',
       },
       {
-        imageUrl: 'path/to/cut-off-analysis.jpg',
+        imageUrl: modal6,
         title: 'Calculation of the Cut Off and/or NSR. Machine learning analysis for geology. Geo-metallurgy and geostatistical considerations.',
       },
       {
-        imageUrl: 'path/to/project-docs.jpg',
+        imageUrl: modal7,
         title: 'Development of Jorc-type documents: NI-43101, SKR500 among others. Preparation and development of chapters in this area for Project level or LOM.',
       },
       {
-        imageUrl: 'path/to/resource-estimation.jpg',
+        imageUrl: modal8,
         title: 'Estimation of Resources and Reserves using Geostatistical techniques such as others such as KOR.',
       },
       {
-        imageUrl: 'path/to/resource-declaration.jpg',
+        imageUrl: modal9,
         title: 'Declaration of Resources and Reserves by Audits and Expert Reviews focused on the Review of Resources and Reserves by Specialty GPs.',
       },
     ];
@@ -348,47 +413,47 @@ export default function Main() {
   
   const lastcards = [
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+1',
+      imageUrl: minning1,
       title: 'Integration of topographic information into the national network',
       description: 'Integration of topographic information into the national network.'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+2',
+      imageUrl: minning2,
       title: 'Unification of graphic information in a database',
       description: 'Unification of graphic information in a database.'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+3',
+      imageUrl: minning3,
       title: 'Graphic systems for property security evaluation',
       description: 'Graphic systems for property security evaluation.'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+4',
+      imageUrl: minning4,
       title: 'Graphic systems for emergency response',
       description: 'Graphic systems for emergency response.'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+5',
+      imageUrl: minning5,
       title: 'Characterization of surface land integrating parameters',
       description: 'Characterization of surface land integrating geological, hydrogeological, and other parameters.'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+6',
+      imageUrl: minning6,
       title: 'Updating in systems and use of coordinates and datums',
       description: 'Updating in systems and use of coordinates and datums (Training included).'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+7',
+      imageUrl: minning7,
       title: 'Web plans',
       description: 'Web plans for infrastructure management.'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+8',
+      imageUrl: minning8,
       title: 'Application of satellite images',
       description: 'Application of satellite images for geological analysis.'
     },
     {
-      imageUrl: 'https://via.placeholder.com/200x150?text=Image+9',
+      imageUrl: minning9,
       title: 'Upgrades in new technologies for data acquisition',
       description: 'Upgrades in new technologies for data acquisition and use.'
     }
@@ -407,11 +472,7 @@ export default function Main() {
         <p className="mt-4 italic text-lg md:text-6xl align-left">
         Driving growth through innovation, efficiency, <br /> and responsible mining practices.
         </p>
-        <div className="flex justify-center mt-6">
-          <span className="h-2 w-2 bg-white rounded-full mx-1"></span>
-          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-        </div>
+       
       </div>
     </main>
     <div className="minning-grid-container">
@@ -557,55 +618,55 @@ export default function Main() {
       <h2 className="text-2xl font-bold mb-8">Quantitative Risk Analysis (QRA)</h2>
 
       {/* Flow chart container */}
-      <div style={{gap:'50%'}} className="flex ">
+      <div  className="flex first-row ">
         
         {/* Row 1 - First two cards */}
         <div className="relative flex flex-col items-center">
-          <div className="bg-white shadow-lg rounded-lg p-4 text-center w-48">
-            <p>Modeling of factors affecting the mining plan</p>
+          <div className="bg-white card-circle shadow-lg rounded-lg p-4 text-center md:w-48 w-32">
+            <p>Modeling of factors <br />affecting the mining plan</p>
           </div>
           {/* Arrow pointing to next card in the row */}
-          <div className="absolute top-1/2 right-[-120px] ">
-            <div className="w-8 h-8 border-b-2 border-r-2 rotation border-black"></div>
+          <div className="absolute arrow-first top-1/2 right-[-120px] ">
+            <div className="w-4 h-4 md:w-8 h-8 border-b-2 border-r-2 rotation border-black"></div>
           </div>
         </div>
         
         <div className="relative flex flex-col items-center">
-          <div className="bg-white shadow-lg rounded-lg p-4 text-center w-48">
-            <p>Risk estimation and degree of reliability of the mining plan</p>
+          <div className="bg-white card-circle  shadow-lg rounded-lg p-4 text-center md:w-48 w-32 ">
+            <p>Risk estimation and <br /> degree of reliability of <br /> the mining plan</p>
           </div>
           {/* Arrow pointing down to next row */}
           <div className="absolute bottom-[-40px] left-1/2 ">
-            <div className="w-8 h-8 border-b-2 border-r-2 rotation2 border-black"></div>
+            <div className="w-4 h-4 md:w-8 h-8  border-b-2 border-r-2 rotation2 border-black"></div>
           </div>
         </div>
         </div>
-<div style={{gap:'70%'}} className="flex mt-16 ">
+<div  className="flex second-row mt-16 ">
         {/* Row 2 - Next two cards */}
         <div className="relative flex flex-col items-center">
-          <div className="bg-white shadow-lg rounded-lg p-4 text-center w-48">
-            <p>Modeling of factors affecting the mining plan</p>
+          <div className="bg-white card-circle  shadow-lg rounded-lg p-4 text-center md:w-48 w-32 ">
+            <p>Modeling of factors <br /> affecting the mining <br /> plan</p>
           </div>
           {/* Arrow pointing to next card in the row */}
-          <div style={{position:'absolute', top:'145%'}} className=" right-[-20px] ">
-            <div className="w-8 h-8 border-b-2 border-r-2 rotate border-black"></div>
+          <div  className=" arrow-third right-[-20px] ">
+            <div className="w-4 h-4 md:w-8 h-8  border-b-2 border-r-2 rotate border-black"></div>
           </div>
         </div>
 
         <div className="relative flex flex-col items-center">
-          <div className="bg-white shadow-lg rounded-lg p-4 text-center w-48">
-            <p>Risk estimation and degree of reliability of the mining plan</p>
+          <div className="bg-white card-circle  shadow-lg rounded-lg p-4 text-center md:w-48 w-32 ">
+            <p>Risk estimation and <br /> degree of reliability of <br /> the mining plan</p>
           </div>
           {/* Arrow pointing down to the final row */}
           <div style={{position:'absolute', left:'6%'}} className="absolute bottom-[-75px]  ">
-            <div className="w-8 h-8 border-b-2 border-r-2 rotate1 border-black"></div>
+            <div className="w-4 h-4 md:w-8 h-8  border-b-2 border-r-2 rotate1 border-black"></div>
           </div>
         </div>
         </div>
 
       {/* Row 3 - Single card centered */}
       <div  className="relative flex flex-col items-center mt-8">
-        <div style={{marginLeft:'280px'}} className="bg-white shadow-lg rounded-lg p-4 text-center w-48">
+        <div  className="bg-white card-circle  third-row shadow-lg rounded-lg p-4 text-center md:w-48 w-32">
           <p>Construction of the mathematical model for quantitative risk analysis</p>
         </div>
       </div>
@@ -672,10 +733,10 @@ export default function Main() {
       <h2 className="text-2xl font-bold mb-4">Geology & Geometallurgy</h2>
 
       {sections.map((section, index) => (
-        <div key={index} className="flex flex-cols md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 border-b pb-4">
+        <div key={index} className="flex flex-cols md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-6 border-b pb-4">
           <div className="flex-1">
-            <h3 className="text-lg font-semibold mb-2">{section.title}</h3>
-            <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+            <h3 className="text-sm md:text-lg font-semibold mb-2">{section.title}</h3>
+            <ul  className="list-disc list-inside space-y-1  md:text-sm text-gray-600">
               {section.points.map((point, idx) => (
                 <li key={idx}>{point}</li>
               ))}
@@ -690,7 +751,7 @@ export default function Main() {
         </div>
       ))}
     </div>
-<div className="container">
+<div className="container p-16">
       <h1 className="main-title">Geotechnics & Geomechanics Area</h1>
 
       <div className="section-title">Design of open pit slopes. Levels of conceptual, prefeasibility, operations, and closure studies</div>
@@ -750,8 +811,42 @@ export default function Main() {
         ))}
       </div>
     </div>
+<div className="card-layout">
+      {/* First row: Card on the left */}
+      <div className="row left-align">
+        <div className="card">Provision of software and support for the acquisition of licences</div>
+      </div>
+      <img style={{position:'relative', left:'35px',width:'150px'}} src={vector} alt="" />
 
-
+      {/* Second row: Card in the center */}
+      <div className="row center-align">
+        <div className="card"> On-line consulting and support of the applications under concession</div>
+       
+      </div>
+      <img style={{position:'relative', left:'50%',width:'150px'}} src={vector} alt="" />
+      {/* Third row: Card on the right */}
+      <div className="row right-align">
+        <div className="card">Contribution to new developments and applications in mining</div>
+        
+      </div>
+    </div>
+    <div className="banner">
+      <div className="content">
+        <p className="text">
+          DARAT is a saudi-based corporation dedicated to the Saudi 2030 vision, offering various integrated solutions that encompass top-tier services and high end products.
+        </p>
+        <div className="logo-section">
+          <h1 className="logo">
+            <img style={{width:'50%'}} src={logo} alt="" />
+          </h1>
+          <div className="flex social-media space-x-4">
+        <a href="#instagram" className="text-white text-xl"><FaInstagram /></a>
+        <a href="#instagram" className="text-white text-xl"><FaTiktok /></a>
+        <a href="#linkedin" className="text-white text-xl"><FaLinkedinIn /></a>
+      </div>
+        </div>
+      </div>
+    </div>
    </>
   );
 }

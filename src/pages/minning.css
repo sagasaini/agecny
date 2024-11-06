@@ -2091,8 +2091,8 @@ button {
   position: relative;
   width: 259.362px;
   height: 206.466px;
-  background: url(../assets/images/5e89eb620a21bd2287cdc04a7eb6ee48add883df.png)
-    no-repeat center;
+  /* background: url(../assets/images/5e89eb620a21bd2287cdc04a7eb6ee48add883df.png)
+    no-repeat center; */
   background-size: cover;
   z-index: 246;
   border-radius: 14.504px 14.504px 0 0;
@@ -2215,8 +2215,8 @@ button {
   position: relative;
   width: 259.362px;
   height: 206.466px;
-  background: url(../assets/images/42683a5146bcba9c6ec32b6a0b1fb4e94c179cd2.png)
-    no-repeat center;
+  /* background: url(../assets/images/42683a5146bcba9c6ec32b6a0b1fb4e94c179cd2.png)
+    no-repeat center; */
   background-size: cover;
   z-index: 255;
   border-radius: 14.504px 14.504px 0 0;
@@ -2327,8 +2327,8 @@ button {
   position: relative;
   width: 259.362px;
   height: 206.466px;
-  background: url(../assets/images/be863fcbca6160ba93f2ee2a21128b6572e69808.png)
-    no-repeat center;
+  /* background: url(../assets/images/be863fcbca6160ba93f2ee2a21128b6572e69808.png)
+    no-repeat center; */
   background-size: cover;
   z-index: 263;
   border-radius: 14.504px 14.504px 0 0;
@@ -2395,8 +2395,8 @@ button {
   position: relative;
   width: 259.362px;
   height: 206.466px;
-  background: url(../assets/images/ce38a4be0ccfafddc88f6446f14d850b1e071c8e.png)
-    no-repeat center;
+  /* background: url(../assets/images/ce38a4be0ccfafddc88f6446f14d850b1e071c8e.png)
+    no-repeat center; */
   background-size: cover;
   z-index: 268;
   border-radius: 14.504px 14.504px 0 0;
@@ -2817,8 +2817,8 @@ button {
   position: relative;
   width: 259.362px;
   height: 206.466px;
-  background: url(../assets/images/fc46048779839baad6a4d76dac3b894387256610.png)
-    no-repeat center;
+  /* background: url(../assets/images/fc46048779839baad6a4d76dac3b894387256610.png)
+    no-repeat center; */
   background-size: cover;
   z-index: 298;
   border-radius: 14.504px 14.504px 0 0;
@@ -6290,7 +6290,7 @@ button {
 }
 
 .grid-item {
-  background-color: #f4f4f4;
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -6500,14 +6500,14 @@ body {
   background-color: #f9f9f9;
 }
 
-.container {
+/* .container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-}
+} */
 
 .main-title {
   font-size: 1.5em;
@@ -6599,3 +6599,93 @@ body {
     display: none;
   }
 }
+
+
+.first-row{
+  gap: 50%;
+}
+.second-row{
+  gap: 70%;
+}
+.third-row{
+  margin-left: 280px;
+}
+.arrow-third{
+  position: absolute;
+  top: 145%;
+}
+@media (max-width: 768px){
+  .first-row{
+    gap: 5% ;
+  }
+  .second-row{
+    gap: 10% ;
+  }
+  .arrow-first{
+    right: -15px !important;
+  }
+.third-row{
+  margin-left: 0px ;
+}
+.arrow-third{
+  left: 50px;
+}
+.arrow-fourth{
+left: 50% !important;
+}
+}
+
+
+
+.card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between rows */
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+/* Align card to the left */
+.left-align {
+  justify-content: flex-start;
+}
+
+/* Center card */
+.center-align {
+  justify-content: center;
+}
+
+/* Align card to the right */
+.right-align {
+  justify-content: flex-end;
+}
+
+.card {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100% !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .card {
+    width: 80%; /* Adjust width for mobile view */
+  }
+  .card-circle {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .card {
+    width: 30%; /* Adjust width for desktop view */
+  }
+}
+

@@ -320,11 +320,7 @@ export default function IT() {
         <p className="mt-4 italic text-lg md:text-6xl align-left">
         Driving the future with seamless connectivity and cutting-edge solutions.
         </p>
-        <div className="flex justify-center mt-6">
-          <span className="h-2 w-2 bg-white rounded-full mx-1"></span>
-          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-        </div>
+      
       </div>
     </main>
     <div className="telecom-services-wrapper overflow-hidden p-8">

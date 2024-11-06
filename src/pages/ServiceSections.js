@@ -9,7 +9,7 @@ import './ServiceSections.css';
 
 const ServiceSections = () => {
   const services = [
-    { title: 'Mining', img: miningImg, link: '/' },
+    { title: 'Mining', img: miningImg, link: '/minning' },
     { title: 'Electro mechanics', img: electromechImg, link: '/Electro-mechanics' },
     { title: 'IT', img: itImg, link: '/it' },
     { title: 'Consulting', img: consultingImg, link: '/consulting' }

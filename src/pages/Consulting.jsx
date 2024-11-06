@@ -306,11 +306,7 @@ const Consulting = () => {
         <p className="mt-4 italic text-lg md:text-6xl align-left">
         Unlocking potential with AI, data labeling, and software tailored to your goals.
         </p>
-        <div className="flex justify-center mt-6">
-          <span className="h-2 w-2 bg-white rounded-full mx-1"></span>
-          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-        </div>
+       
       </div>
     </main>
     <div className="consulting-container">
