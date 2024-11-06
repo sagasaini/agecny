@@ -1,0 +1,52 @@
+.electro-group{
+  position: absolute;
+  width: 42.81%;
+  height: 73.47%;
+  top: 0%;
+  left: 57.19%;
+  background: url(http://localhost:3000/static/media/40112de2-26a5-45b9-a36c-1861ba3d2d4c.15e8544….png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 451;
+
+}
+
+@media (max-width:768px){
+.home-text{
+  margin-top: 0;
+}
+.elctro-text-1{
+  font-size:2rem !important ;
+}
+
+.menu-icon{
+  order: 1;
+}
+.home-image{
+  width: 70% !important;
+  display: block !important;
+}
+.social-media{
+  display: none;
+}
+.title{
+  z-index: 2 !important;
+}
+.service-button{
+  z-index: 2 !important;
+}
+.about-us-image-1{
+  width: 70% ;
+  transform: rotate(90deg);
+  left: -80px !important;
+  bottom: 65px !important;
+}
+.about-us-image{
+  width: 70% ;
+  transform: rotate(-90deg);
+  right: -80px !important;
+    top: 50px;
+}
+.map-image{
+  order: 1;
+}
+}

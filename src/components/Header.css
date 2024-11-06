@@ -1,0 +1,138 @@
+.rectangle {
+    position: relative;
+    width: 100%; /* Make it responsive */
+    height: 124px;
+    margin: 0;
+    background: #ffffff;
+    z-index: 3;
+  }
+  
+  .frame {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* For better spacing */
+    padding: 0 20px;
+    z-index: 423;
+  }
+  
+  .menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 500;
+  }
+  
+  .frame-6 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 431;
+  }
+  
+  /* .frame-6.menu-closed {
+    display: none;
+  } */
+  
+  .frame-6.menu-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Use fixed for full-screen coverage */
+    top: 115px;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: black;
+    padding: 20px;
+    z-index: 1000; /* Make sure it covers everything else */
+  }
+  
+  .frame-7, .about-us, .proyects, .contact-us {
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 29px;
+    font-family: 'Area Normal Trial', sans-serif;
+    font-size: 18px; /* Slightly larger font for better visibility */
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+  }
+
+  .header-image, .header-image-1{
+    display: none;
+  }
+  
+
+  
+  .no-scroll {
+    overflow: hidden;
+  }
+  
+
+  .group-8 {
+    flex-shrink: 0;
+    position: relative;
+    width: 159.854px;
+    height: 62.904px;
+    background: url(../assets/images/afff88ae-d6b1-40b1-aa63-b3862867bcbd.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 437;
+  }
+
+  .header-image{
+    width: 70% ;
+    transform: rotate(-90deg);
+  }
+
+  .header-image-1{
+    width: 70% ;
+    transform: rotate(90deg);
+  }
+  
+  
+  .selected {
+    border: 1px solid black;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+    .header-image, .header-image-1{
+      display: block !important;
+    }
+    .frame{
+        margin: 36px 0 0 0 !important;
+    }
+  
+    .frame-6 {
+      display: none; /* Hide by default */
+    }
+  
+    .frame-6.menu-open {
+      display: flex; /* Show when open */
+    }
+    .frame-7, .about-us, .proyects, .contact-us {
+      cursor: pointer;
+      padding: 15px 20px;
+      border-radius: 29px;
+      font-family: 'Area Normal Trial', sans-serif;
+      font-size: 18px; /* Slightly larger font for better visibility */
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+    }
+    
+  }
+  
+  @media (min-width: 769px) {
+    .frame-6 {
+      display: flex; /* Display the header links in a row on desktop */
+      gap: 20px; /* Add spacing between menu items */
+    }
+   
+    
+  }
