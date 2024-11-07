@@ -113,7 +113,11 @@
     }
   
     .frame-6.menu-open {
-      display: flex; /* Show when open */
+      display: flex; 
+      align-items: flex-start; /* Show when open */
+    }
+    .social{
+      display: block !important;
     }
     .frame-7, .about-us, .proyects, .contact-us {
       cursor: pointer;

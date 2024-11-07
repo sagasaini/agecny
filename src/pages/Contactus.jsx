@@ -50,7 +50,7 @@ function ContactUs() {
     <div className="md:w-1/2 mb-8 map-image md:mb-0 md:mr-6">
   <iframe
     width="100%"
-    height="400"
+    height="600"
     style={{ border: "0" }}
     loading="lazy"
     allowFullScreen

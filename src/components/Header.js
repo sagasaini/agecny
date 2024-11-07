@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FaInstagram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+
 import group from '../assets/images/Group 111.png'
 
 import './Header.css';
@@ -63,6 +67,18 @@ const Header = () => {
           >
             ABOUT US
           </Link>
+          {/* <Link
+            to="/"
+            className={` social ${selected === '/' ? 'selected' : ''}`}
+            onClick={() => handleSelect('/')}
+            style={{display:'none'}}
+          >
+             <div className="flex social-media space-x-4">
+        <a href="#instagram" className="text-white text-xl"><FaInstagram /></a>
+        <a href="#instagram" className="text-white text-xl"><FaTiktok /></a>
+        <a href="#linkedin" className="text-white text-xl"><FaLinkedinIn /></a>
+      </div>
+          </Link> */}
           {/* <Link
             to="/projects"
             className={`proyects ${selected === '/projects' ? 'selected' : ''}`}
