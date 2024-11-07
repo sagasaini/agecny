@@ -10,6 +10,25 @@
 
 }
 
+.about-header{
+  font-size: 30px;
+}
+.about-text{
+  font-size: 14px;
+}
+.it-dron{
+  font-size: 30px;
+  font-weight: 600;
+}
+.it-dronp , .it-auto{
+  font-size: 18px;
+  text-align: left;
+}
+.it-auto1{
+  font-size: 18px;
+  text-align: right;
+}
+
 @media (max-width:768px){
 .home-text{
   margin-top: 0;
@@ -48,5 +67,60 @@
 }
 .map-image{
   order: 1;
+}
+
+.home-header{
+  font-size: 28px !important;
+}
+.home-title{
+  font-size: 22px !important;
+}
+.home-description{
+  font-size: 15px !important;
+}
+.service-bottom {
+  margin-bottom: 0px !important;
+}
+.about-header{
+  font-size: 28px;
+}
+.about-text{
+  font-size: 10px ;
+}
+.about-title{
+  font-size: 18px !important;
+}
+.electro-title, .electro-des{
+  font-size: 28px !important;
+}
+.it-title{
+font-size: 28px !important;
+}
+.it-des{
+  font-size: 28px !important;
+  }
+.harware-text{
+  font-size: 13px;
+}
+.it-dronp{
+  font-size: 11px;
+}
+.it-auto{
+  font-size: 11px;
+}
+.it-auto1{
+  font-size: 11px;
+}
+.dron-image{
+  width: 100% !important;
+}
+.auto-image{
+  border-radius: 0px !important;
+}
+.drone-text{
+  font-size: 12px;
+}
+.drone-image-2{
+  display: none;
 }
 }

@@ -87,8 +87,25 @@ const Consulting = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 1, // Show one main slide at a time
+    centerMode: true, // Center the slide
+    centerPadding: '0', // Adjust padding to show partial slides on both sides
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '25%', // Show partial slides on mobile
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '20%', // Narrower padding for smaller screens
+        },
+      },
+    ],
   };
 
   const cards = [
@@ -302,8 +319,8 @@ const Consulting = () => {
     <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
       <div  className="absolute inset-0 bg-black opacity-50"></div>
       <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-8 lg:p-8 text-left">
-        <h1 className="text-2xl md:text-4xl font-bold">Consulting</h1>
-        <p className="mt-4 italic text-lg md:text-6xl align-left">
+        <h1 style={{fontSize:'35px'}} className="it-title font-bold">Consulting</h1>
+        <p style={{fontSize:'48px'}} className="mt-4 it-des italic  align-left">
         Unlocking potential with AI, data labeling, and software tailored to your goals.
         </p>
        
@@ -313,7 +330,7 @@ const Consulting = () => {
     <img className='electro-image-22' style={{position:'absolute', right:'0'}} src={group} alt="" />
       <header className="consulting-header">
      
-        <h1>Innovation and technology should make life simple.</h1>
+        <h1 >Innovation and technology <br /> should make life simple.</h1>
         <p>
           That’s why, here at Darat Co., we make sure innovation <br /> works for you,
           your business, and your people.
@@ -340,7 +357,7 @@ const Consulting = () => {
             <div className="problem-icon">
             <img src={tackle1} alt="" />
             </div>
-            <p>High operational cost</p>
+            <p>High operational <br /> cost</p>
           </div>
           <div className="problem-card">
             <div className="problem-icon">
@@ -369,8 +386,9 @@ const Consulting = () => {
           </div>
           <h3>Diagnosis</h3>
           <p>
-            We begin by conducting a thorough assessment of your business
-            challenges and needs, identifying key areas for improvement.
+            We begin by conducting a thorough <br />
+assessment of your business <br />
+            challenges and needs, identifying key <br />areas for improvement.
           </p>
         </div>
 
@@ -381,8 +399,8 @@ const Consulting = () => {
           </div>
           <h3>Strategic Development</h3>
           <p>
-            Our team crafts a tailored strategy, leveraging advanced AI, custom
-            software solutions, and data analytics to address your specific
+            Our team crafts a tailored strategy, <br />leveraging advanced AI, custom <br />
+            software solutions, and data analytics <br />to address your specific
             requirements.
           </p>
         </div>
@@ -394,8 +412,8 @@ const Consulting = () => {
           </div>
           <h3>Implementation</h3>
           <p>
-            We seamlessly integrate our solutions into your existing
-            infrastructure, ensuring minimal disruption and maximum efficiency.
+            We seamlessly integrate our solutions <br />into your existing <br />
+            infrastructure, ensuring minimal <br />disruption and maximum efficiency.
           </p>
         </div>
 
@@ -406,157 +424,226 @@ const Consulting = () => {
           </div>
           <h3>Optimization</h3>
           <p>
-            Continuous monitoring and feedback help us refine and optimize our
-            solutions, ensuring sustained growth and improved performance for
+            Continuous monitoring and feedback help <br />us refine and optimize our <br />
+            solutions, ensuring sustained growth <br />and improved performance for
             your company.
           </p>
         </div>
       </div>
     </div>
    
-    <div className=" digital-transformation-wrapper overflow-hidden p-8">
-    <img className='electro-image-22' style={{position:'absolute', right:'0'}} src={group} alt="" />
-    <div className="demo p-8">
-  <h2 className="digital-transformation mt-16 font-bold mb-4">Digital Transformation</h2>
+   <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="digital-transformation mt-16 font-bold mb-4">Digital Transformation</h2>
   <p  className="mb-2 digital-transformation-des">
     Digitalization is key for companies to stay afloat and thrive. They require assistance in adopting digital technologies to streamline operations and expand their customer base.
   </p>
-  <p className="font-semibold mb-6">Aim: Integrate digital technologies into SME operations, processes, and culture.</p>
-</div>
-  {/* Slider for Mobile */}
-  <div className="md:hidden overflow-hidden">
-    <Slider {...sliderSettings}>
-      {cards.map((solution, index) => (
-        <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
-          <div className="p-4">
-            <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-            <p className="text-gray-600 text-sm">{solution.description}</p>
+  <p className="font-semibold digital-transformation-des mb-6">Aim: Integrate digital technologies into SME operations, processes, and culture.</p>
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
-    </Slider>
-  </div>
-
-  {/* Grid for Desktop */}
-  <div className="hidden p-8 digital-tech-grid">
-    {cards.map((solution, index) => (
-      <div key={index} className="digital-tech-card">
-        <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
-        <div className="p-4">
-          <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-          <p className="text-gray-600 text-sm">{solution.description}</p>
-        </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
-<div className="software-solutions-wrapper overflow-hidden p-8">
-<img className='electro-image-3' style={{position:'absolute', left:'-30px'}} src={image2} alt="" />
-      <h2 className="digital-transformation font-bold mb-4">Software Solutions</h2>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {cards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+ <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+       <h2 className="digital-transformation font-bold mb-4">Software Solutions</h2>
       <p className="mb-2 digital-transformation-des">
         Customized software solutions can help automate processes, enhance productivity, and gain a competitive edge.
       </p>
-      <p className="font-semibold mb-6">
+      <p className="font-semibold digital-transformation-des mb-6">
         Aim: to develop customized software solutions to address specific business needs and challenges.
       </p>
 
-      {/* Slider for Mobile */}
-      <div className="md:hidden overflow-hidden ">
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {solutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
         <Slider {...sliderSettings}>
           {solutions.map((solution, index) => (
-            <div key={index} className="bg-white shadow-lg  rounded-lg overflow-hidden">
-              <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-                <p className="text-gray-600 text-sm">{solution.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+        Software
+      </h2>
 
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6">
-        {solutions.map((solution, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+        {softwareSolutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-              <p className="text-gray-600 text-sm">{solution.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-    <div className="software-wrapper overflow-hidden p-8">
-    <img className='electro-image-22' style={{position:'absolute', right:'0'}} src={group} alt="" />
-      <h2 className="software-text font-bold mb-4">Software</h2>
 
-      {/* Slider for Mobile */}
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
           {softwareSolutions.map((solution, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-                <p className="text-gray-600 text-sm">{solution.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6">
-        {softwareSolutions.map((solution, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-              <p className="text-gray-600 text-sm">{solution.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
-    <div className="ai-wrapper overflow-hidden p-8">
-    <img className='electro-image-3' style={{position:'absolute', left:'-30px'}} src={image2} alt="" />
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
       <h2 className="software-text font-bold mb-4">Artificial Intelligence</h2>
       <p className="mb-4 digital-transformation-des">
         Our AI and ML solutions help organizations optimize business processes, improve efficiency, and reduce costs.
       </p>
 
-      {/* Slider for Mobile */}
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+        {aiSolutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
           {aiSolutions.map((solution, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-                <p className="text-gray-600 text-sm">{solution.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6">
-        {aiSolutions.map((solution, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-              <p className="text-gray-600 text-sm">{solution.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
-    <div className="app-container">
+    <div className="app-container container">
       <section className="industry-section">
         <h2 className="section-title">Industry Applications</h2>
         <div className="card-grid">
@@ -577,7 +664,7 @@ const Consulting = () => {
         </div>
       </section>
     </div>
-    <div className="data-management">
+    <div className="data-management container">
     <img className='electro-image-22' style={{position:'absolute', right:'0'}} src={group} alt="" />
       <h2 className="data-management-title">Data Management & Engineering</h2>
       <p className="data-management-description">
@@ -609,39 +696,57 @@ const Consulting = () => {
         />
       </div>
     </div>
-    <div className="data-solutions-wrapper overflow-hidden p-8">
-      <h2 className="text-2xl font-bold mb-4">Data Management & Engineering</h2>
-      <p className="mb-2">
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="digital-transformation font-bold mb-4">Data Management & Engineering</h2>
+      <p className="mb-2 digital-transformation-des">
         Access to data analytics and business intelligence tools enables informed decision-making, helping companies navigate challenges and capitalize on opportunities.
       </p>
-      <p className="font-semibold mb-6">Aim: to implement solutions to collect, analyze, and visualize data, enabling informed business decisions.</p>
+      <p className="font-semibold digital-transformation-des mb-6">Aim: to implement solutions to collect, analyze, and visualize data, enabling informed business decisions.</p>
 
-      {/* Slider for Mobile */}
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {lastsolutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
           {lastsolutions.map((solution, index) => (
-            <div key={index} className="data-card shadow-lg rounded-lg overflow-hidden">
-              <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-                <p className="text-gray-600 text-sm">{solution.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
-      </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid data-grid">
-        {lastsolutions.map((solution, index) => (
-          <div key={index} className="data-card">
-            <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-              <p className="text-gray-600 text-sm">{solution.description}</p>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   
@@ -664,35 +769,55 @@ const Consulting = () => {
         </p>
       </main>
     </div>
-<div className="business-management-wrapper p-8">
-      {/* Slider for Mobile */}
+<div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+     
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {lastcards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
-          {cards.map((card, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+          {lastcards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {lastcards.map((card, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    </div>
 <div className="banner">
       <div className="content">
         <p className="text">

@@ -47,9 +47,29 @@ function ContactUs() {
     zIndex: '2',
     top: '130px' ,
     width: '60%'}} src={group} alt="" />
-      <div className="md:w-1/2 mb-8 map-image md:mb-0 md:mr-6">
-        <img src={mapImage} alt="Map" className="w-full  rounded-md shadow-lg" />
-      </div>
+    <div className="md:w-1/2 mb-8 map-image md:mb-0 md:mr-6">
+  <iframe
+    width="100%"
+    height="400"
+    style={{ border: "0" }}
+    loading="lazy"
+    allowFullScreen
+    title="Daratec Location Map"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=46.6788%2C24.7146%2C46.6868%2C24.7194&layer=mapnik&marker=24.717028%2C46.682917"
+  ></iframe>
+  <br />
+  {/* <small style={{zIndex: '99', position:'relative'}}>
+    <a
+      href="https://www.google.com/maps/place/24%C2%B043'01.3%22N+46%C2%B040'58.5%22E/@24.734522,46.6231319,11z/data=!4m4!3m3!8m2!3d24.7170278!4d46.6829167?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "#00b4d8" ,fontSize:'20px' }}
+    >
+      View Larger Map
+    </a>
+  </small> */}
+</div>
+
 
       {/* Form Section */}
       <div className="md:w-1/2 bg-black text-white p-8 rounded-md shadow-lg">
@@ -136,7 +156,7 @@ function ContactUs() {
     <img style={{position: 'absolute',
     left: '0px' ,
     zIndex: '2',
-    bottom: '-40%' ,
+    bottom: '-25%' ,
     width: '60%'}} src={group} alt="" />
     </>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import './IT.css';
+import './responsive.css'
 import group from '../assets/images/Group 145.png'
 import group2 from '../assets/images/Group 146.png'
 import background from '../assets/images/IT.png'
@@ -302,9 +303,25 @@ const sliderSettings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  adaptiveHeight: true,
+  slidesToShow: 1, // Show one main slide at a time
+  centerMode: true, // Center the slide
+  centerPadding: '0', // Adjust padding to show partial slides on both sides
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        centerPadding: '25%', // Show partial slides on mobile
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        centerPadding: '20%', // Narrower padding for smaller screens
+      },
+    },
+  ],
 };
 
 
@@ -316,162 +333,237 @@ export default function IT() {
     <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
       <div  className="absolute inset-0 bg-black opacity-50"></div>
       <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-8 lg:p-8 text-left">
-        <h1 className="text-2xl md:text-4xl font-bold">IT</h1>
-        <p className="mt-4 italic text-lg md:text-6xl align-left">
+        <h1 style={{fontSize:'35px'}} className="it-title font-bold">IT</h1>
+        <p style={{fontSize:'48px'}}  className="mt-4 it-des italic  align-left">
         Driving the future with seamless connectivity and cutting-edge solutions.
         </p>
       
       </div>
     </main>
-    <div className="telecom-services-wrapper overflow-hidden p-8">
-    <img className='electro-image-2' style={{position:'absolute', right:'0'}} src={group} alt="" />
-       <h2 className=" main-margin text-2xl    font-bold mb-4">Telecom Services</h2>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+        Telecom Services
+      </h2>
 
-      {/* Slider for Mobile */}
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
-          {cards.map((card, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+          {cards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
+    </div>
+   <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      IT Passive solutions (OSP-ISP/PDS)
+      </h2>
 
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid md:grid-cols-3 gap-6">
-        {cards.map((card, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-    <div className="it-passive-solutions-wrapper overflow-hidden p-8">
-    <img className='electro-image-2' style={{position:'absolute', right:'0'}} src={group} alt="" />
-       <h2 className=" main-margin text-2xl font-bold    mb-4">IT Passive solutions (OSP-ISP/PDS)</h2>
 
-      {/* Slider for Mobile */}
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
-          {cardss.map((card, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+          {cardss.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
+    </div>
+     <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Integrated Communication Solutions
+      </h2>
 
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 gap-6">
-        {cardss.map((card, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {solutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-    <div className="communication-solutions-wrapper overflow-hidden p-8">
-    <img className='electro-image-3'   src={group2} alt="" />
-       <h2 className=" main-margin text-2xl    font-bold mb-4">Integrated Communication Solutions</h2>
 
-      {/* Slider for Mobile */}
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
           {solutions.map((solution, index) => (
-            <div key={index} className="solution-card shadow-lg rounded-lg overflow-hidden">
-              <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-                <p className="text-gray-600 text-sm">{solution.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+       <h2 className=" main-margin text-2xl    font-bold mb-4">Hardware Solutions</h2>
+<p className='mt-4 mb-4 harware-text text-bold'>Darat offers a range of innovative hardware solutions, including cutting-edge input devices like advanced barcode scanners for seamless inventory management, state-of-theart output devices, high-resolution projectors that bring presentations to life, and powerful processing units like our custom-designed ASICs that accelerate data processing.</p>
+<p className='mt-4 harware-text mb-4 bold'>Reliable storage solutions like lightning-fast SSDs for secure and efficient data management, communication tools such as high-speed routers and switches that ensure flawless connectivity, and groundbreaking IoT devices that optimize energy usage and connected sensors that enable real-time monitoring and analysis for smarter decision-making</p>
 
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid solution-grid">
-        {solutions.map((solution, index) => (
-          <div key={index} className="solution-card">
-            <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {hardwareSolutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-              <p className="text-gray-600 text-sm">{solution.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-    <div className="hardware-solutions-wrapper overflow-hidden p-8">
-    <img className='electro-image-2' style={{position:'absolute', right:'0'}} src={group} alt="" />
-       <h2 className=" main-margin text-2xl    font-bold mb-4">Hardware Solutions</h2>
-<p className='mt-4 mb-4 text-bold'>Darat offers a range of innovative hardware solutions, including cutting-edge input devices like advanced barcode scanners for seamless inventory management, state-of-theart output devices, high-resolution projectors that bring presentations to life, and powerful processing units like our custom-designed ASICs that accelerate data processing.</p>
-<p className='mt-4 mb-4 bold'>Reliable storage solutions like lightning-fast SSDs for secure and efficient data management, communication tools such as high-speed routers and switches that ensure flawless connectivity, and groundbreaking IoT devices that optimize energy usage and connected sensors that enable real-time monitoring and analysis for smarter decision-making</p>
-      {/* Slider for Mobile */}
+
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
           {hardwareSolutions.map((solution, index) => (
-            <div key={index} className="solution-card shadow-lg rounded-lg overflow-hidden">
-              <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-                <p className="text-gray-600 text-sm">{solution.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
-      </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid hardware-grid">
-        {hardwareSolutions.map((solution, index) => (
-          <div key={index} className="solution-card">
-            <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-              <p className="text-gray-600 text-sm">{solution.description}</p>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
     <div className="drones-section-container p-8">
     <img className='electro-image-3'   src={group2} alt="" />
       <div className="content-container   ">
         <div className="text-content">
-           <h2 className=" main-margin section-title">Drones</h2>
-          <p>
+           <h2 className="it-dron">Drones</h2>
+          <p className='it-dronp'>
             We offer a range of advanced drones that revolutionize various industries, including aerial 
             <strong> photography </strong> and <strong> videography</strong>, where our high-resolution camera-equipped drones capture breathtaking images and stunning videos from unique perspectives.
           </p>
-          <p>
+          <p className='it-dronp'>
             Our professional-grade drones provide accurate data collection and mapping capabilities surveying and mapping, enabling efficient land surveys and 
             <strong> infrastructure inspections</strong>.
           </p>
-          <p>
+          <p className='it-dronp'>
             For <strong>agricultural applications</strong>, our agricultural drones with multispectral sensors optimize crop management by providing valuable insights into crop health and monitoring field conditions.
           </p>
-          <p>
+          <p className='it-dronp'>
             In the <strong>delivery and logistics</strong> sector, our delivery drones offer efficient and speedy transportation of goods, enabling timely deliveries in urban and remote areas.
           </p>
-          <p>
+          <p className='it-dronp'>
             Lastly, in <strong>search and rescue operations</strong>, our rugged and versatile drones equipped with thermal imaging cameras aid in locating missing persons and assessing disaster-stricken areas.
           </p>
         </div>
@@ -487,74 +579,93 @@ export default function IT() {
       
       <div className="block md:flex  gap-8">
       <div className="flex flex-col">
-      <p className="intro">
-        Oarait offers comprehensive services; conceptual design ensuring our client's automation needs are met through innovative and efficient solutions. We offer multi-discipline detailed design and specification, guaranteeing seamless integration for optimized performance.
+      <p className="it-auto">
+        Darat offers comprehensive services; conceptual design ensuring our client's automation needs are met through innovative and efficient solutions. We offer multi-discipline detailed design and specification, guaranteeing seamless integration for optimized performance.
       </p>
 
-      <p>
+      <p className="it-auto">
         We are proficient in programming distributed control systems (DCS), remote terminal units (RTU), and supervisory control and data acquisition (SCADA) systems, enabling centralized control and monitoring of industrial processes.
       </p>
 
-      <p>
+      <p className="it-auto">
         Our grid automation solutions encompass advanced grid communication, metering infrastructure, and energy optimization, empowering our clients to enhance grid efficiency and maximize energy utilization.
       </p>
 
-      <p>
+      <p className="it-auto">
         In the delivery and logistics sector, our delivery drones offer efficient and speedy transportation of goods, enabling timely deliveries in urban and remote areas.
       </p>
-      <img src={placeholderImage} alt="Automation system 1" />
+      <img style={{borderRadius:'50px'}} src={placeholderImage} alt="Automation auto-image system 1" />
 </div>
       <div className="images flex flex-col gap-4">
        
-        <img className='hidden md:block' src={placeholderImage} alt="Automation system 2" />
+        <img style={{borderRadius:'50px'}} className='hidden  md:block' src={placeholderImage} alt="Automation system 2" />
 
-          <h2 className='main-margin'>Industrial Communication Gateways</h2>
-          <p>
-            Industrial communication gateways and protocol converters in hardware and software1 enable excellent communication between different devices and systems, ensuring interoperability and smooth operation.
+         
+          <p className="it-auto1">
+           <strong> Industrial communication gateways </strong> and protocol converters in hardware and software1 enable excellent communication between different devices and systems, ensuring interoperability and smooth operation.
           </p>
 
-          <h2>Station Plant Information System (SPIS)</h2>
-          <p>
-            Station Plant Information System (SPIS) and Data Retrieval Station Evaluation Panel (DTR/SEP) provides a central platform for seamless communication and automation across all processes. Our Substation Automation System (SAS) enhances reliable remote management.
+        
+          <p className="it-auto1">
+          <strong>  Station Plant Information System (SPIS) </strong> and Data Retrieval Station Evaluation Panel (DTR/SEP) provides a central platform for seamless communication and automation across all processes. Our Substation Automation System (SAS) enhances reliable remote management.
           </p>
 
-        <p>
+        <p className="it-auto1">
           We offer comprehensive installation and commissioning services, including pre-commissioning, construction supervision, and meticulous testing and inspection, guaranteeing our client’s successful implementation and seamless operation of automation systems.
         </p>
       </div>
       </div>
 
     </div>
-    <div className="security-systems-wrapper overflow-hidden  p-8">
-    <img className='electro-image-3'   src={group2} alt="" />
-        <h2 className=" main-margin text-2xl    font-bold mb-4">Security Systems</h2>
+     <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+        Security System
+      </h2>
 
-      {/* Slider for Mobile */}
-      <div className="md:hidden ">
-    <Slider {...sliderSettings}>
-      {cardsss.map((card, index) => (
-        <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-          <div className="p-4">
-            <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-            <p className="text-gray-600 text-sm">{card.description}</p>
-          </div>
-        </div>
-      ))}
-    </Slider>
-  </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-3 gap-4">
-        {cardsss.map((card, index) => (
-          <div key={index} className="card bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cardsss.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {cardsss.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
     <img className='electro-image-22' style={{position:'absolute', right:'0'}} src={group} alt="" />
@@ -563,14 +674,14 @@ export default function IT() {
       {/* Text Section */}
       <div className="md:w-1/2    p-4">
          <h2 className=" main-margin text-2xl font-bold mb-4">Drones</h2>
-        <p className="text-gray-700 mb-4">
+        <p className="text-gray-700 drone-text mb-4">
           At Darat, we are experts in uncovering operational failures and resolving them swiftly, ensuring smooth and efficient business operations.
         </p>
-        <p className="text-gray-700 mb-4">
+        <p className="text-gray-700 drone-text mb-4">
           Through our diligent system maintenance practices, we not only enhance your organization’s overall efficiency but also save valuable time and resources associated with system management and production, enabling you to focus on what truly matters – driving growth and success.
         </p>
         <h3 className="font-semibold">Maintenance operations</h3>
-        <ul className="list-disc list-inside text-gray-700">
+        <ul className="list-disc drone-text list-inside text-gray-700">
           <li>Preventive</li>
           <li>Corrective</li>
           <li>Complex maintenance</li>
@@ -578,11 +689,11 @@ export default function IT() {
       </div>
 
       {/* Image Section */}
-      <div className="md:w-1/2 p-4">
+      <div style={{width:'40%'}} className=" dron-image p-4">
         <img
           src={droneImage}
           alt="Maintenance worker with drone equipment"
-          className="rounded-lg shadow-lg w-full h-auto"
+          className="rounded-lg drone-image-2 shadow-lg w-full h-auto"
         />
       </div>
     </div>

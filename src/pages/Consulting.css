@@ -12,13 +12,13 @@
 }
 
 .consulting-header h1 {
-  font-size: 2rem;
+  font-size: 48px;
   margin-bottom: 1rem;
 }
 
 .consulting-header p {
   margin: 0.5rem 0;
-  font-size: 20px;
+  font-size: 27px;
 }
 
 .problems-section h2 {
@@ -29,7 +29,7 @@
 
 .problems-grid {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -42,12 +42,14 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
-  width: 200px;
+  width: 250px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .problem-icon {
+  display: flex;
+  justify-content: center;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -112,10 +114,7 @@
 }
 
 
-.slider-container {
-  position: relative;
-  overflow: hidden;
-}
+
 
 .slick-slide {
   transition: transform 0.5s ease-in-out;
@@ -155,13 +154,11 @@
   right: 10px;
 }
 
-.slider-card {
+/* .slider-card {
   filter: blur(2px);
-}
+} */
 
-.slick-center .slider-card {
-  filter: blur(0);
-}
+
 
 .digital-tech-container {
   font-family: 'Arial', sans-serif;
@@ -375,6 +372,7 @@
 /* App container styling */
 .app-container {
   padding: 20px;
+  margin: 0 auto;
   font-family: Arial, sans-serif;
 }
 
@@ -441,13 +439,14 @@
     margin-top: 0px !important;
   }
   .digital-transformation-des{
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 
 /* Container styling */
 .data-management {
   padding: 20px;
+  margin: 0 auto;
   font-family: Arial, sans-serif;
 }
 
@@ -656,7 +655,7 @@
 }
 
 @media (min-width: 768px) {
-  .data-solutions-wrapper .slick-slider {
+  .data-solutions-wrapper  {
     display: none;
   }
 }
@@ -746,6 +745,28 @@
   grid-column: span 4 / span 4;
 }
 
+
+/* Apply general styling to all cards */
+/* .slider-card {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+} */
+
+/* Center card styling */
+.center-card {
+  transform: scale(1.05); /* Slightly larger to highlight */
+  filter: none;
+}
+
+/* Side cards (left and right) styling */
+.side-card {
+  transform: scale(0.9); /* Slightly smaller to de-emphasize */
+  filter: blur(4px); /* Apply blur effect */
+}
 
 
 

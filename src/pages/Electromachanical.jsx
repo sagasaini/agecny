@@ -81,16 +81,22 @@ const Electromachanical = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    centerMode: true,
-    centerPadding: '30px',
+    slidesToShow: 1, // Show one main slide at a time
+    centerMode: true, // Center the slide
+    centerPadding: '0', // Adjust padding to show partial slides on both sides
     responsive: [
       {
-        breakpoint: 768, // Mobile view breakpoint
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
-          centerPadding: '30px',
+          centerPadding: '25%', // Show partial slides on mobile
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '20%', // Narrower padding for smaller screens
         },
       },
     ],
@@ -103,44 +109,65 @@ const Electromachanical = () => {
     <img className='electro-image' style={{position:'absolute', right:'0'}} src={group} alt="" />
     <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
       <div  className="absolute inset-0 bg-black opacity-50"></div>
-      <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-8 lg:p-8 text-left">
-        <h1 className="text-2xl md:text-4xl font-bold">Electromechanical, energy and automation</h1>
-        <p className="mt-4 italic text-lg md:text-6xl align-left">
+      <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-16 lg:p-16 text-left">
+        <h1 style={{fontSize:'35px'}} className="electro-title font-bold">Electromechanical, energy and automation</h1>
+        <p style={{fontSize:'48px'}}  className="mt-4 electro-des italic align-left">
         Powering innovation where <br /> precision meets performance.
         </p>
        
       </div>
     </main>  
-    <div className="container mx-auto px-4 py-12">
-    <img className='electro-image-2' style={{position:'absolute', right:'0'}} src={group} alt="" />
-        <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">Energy Solutions</h2>
-        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+        Energy Solutions
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {Solutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
           {Solutions.map((solution, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
-                <p className="text-gray-600">{solution.description}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Mobile view slider */}
-        <div className="md:hidden">
-          <Slider {...sliderSettings}>
-            {Solutions.map((solution, index) => (
-              <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src={solution.imageUrl} alt={solution.title} className="w-full h-48 object-cover" />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-1">{solution.title}</h3>
-                  <p className="text-gray-600 text-sm">{solution.description}</p>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
+        </Slider>
       </div>
+    </div>  
 
       <div className="container mx-auto py-12 px-4">
       <img className='electro-image-3' style={{display:'none'}} src={group2} alt="" />

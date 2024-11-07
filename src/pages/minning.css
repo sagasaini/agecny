@@ -6586,13 +6586,7 @@ body {
   font-size: 0.875rem;
 }
 
-.slick-slide {
-  padding: 0 0.5rem;
-}
 
-.slick-list {
-  margin: 0 -0.5rem;
-}
 
 @media (max-width: 768px) {
   .digital-tech-grid{

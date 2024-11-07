@@ -1,4 +1,5 @@
 import React from 'react';
+import './responsive.css'
 import { Link } from 'react-router-dom'; // Import Link from React Router
 import miningImg from '../assets/images/service3.png'; // replace with your image paths
 import electromechImg from '../assets/images/service1.png';
@@ -23,7 +24,7 @@ const ServiceSections = () => {
       {services.map((service, index) => (
         <div
           key={index}
-          className="relative flex items-center justify-center text-center text-white"
+          className="relative flex items-center md:items-end justify-center text-center text-white"
           style={{
             backgroundImage: `url(${service.img})`,
             backgroundSize: 'cover',
@@ -32,9 +33,9 @@ const ServiceSections = () => {
             width: '-webkit-fill-available'
           }}
         >
-          <div className="bg-opacity-50 p-4 rounded-lg">
-            <h2 style={{position: 'relative',
-    zIndex: '3'}} className="title font-bold mb-4">{service.title}</h2>
+          <div style={{marginBottom:'50%'}} className="bg-opacity-50 service-bottom  p-4 rounded-lg">
+            <h2  style={{position: 'relative',
+    zIndex: '3',textAlign:'center'}} className="title  font-bold mb-4">{service.title}</h2>
             <Link to={service.link}>
               <button style={{ background: '#E8E3AC',position:'relative', zIndex:'99' }} className="text-black service-button font-semibold py-2 px-4 rounded-full hover:bg-yellow-400">
                 See More

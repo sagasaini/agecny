@@ -63,13 +63,13 @@ const Header = () => {
           >
             ABOUT US
           </Link>
-          <Link
+          {/* <Link
             to="/projects"
             className={`proyects ${selected === '/projects' ? 'selected' : ''}`}
             onClick={() => handleSelect('/projects')}
           >
             PROYECTS
-          </Link>
+          </Link> */}
           <Link
             to="/contact-us"
             className={`contact-us ${selected === '/contact-us' ? 'selected' : ''}`}

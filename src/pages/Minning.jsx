@@ -91,14 +91,30 @@ export default function Main() {
   ];
 
 
-    const sliderSettings = {
-      dots: true,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-    };
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1, // Show one main slide at a time
+    centerMode: true, // Center the slide
+    centerPadding: '0', // Adjust padding to show partial slides on both sides
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '25%', // Show partial slides on mobile
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '20%', // Narrower padding for smaller screens
+        },
+      },
+    ],
+  };
   
     const cards = [
       {
@@ -468,8 +484,8 @@ export default function Main() {
     <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
       <div  className="absolute inset-0 bg-black opacity-50"></div>
       <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-8 lg:p-8 text-left">
-        <h1 className="text-2xl md:text-4xl font-bold">Mining</h1>
-        <p className="mt-4 italic text-lg md:text-6xl align-left">
+        <h1 style={{fontSize:'35px'}} className="it-title font-bold">Mining</h1>
+        <p style={{fontSize:'48px'}} className="mt-4 italic it-des align-left">
         Driving growth through innovation, efficiency, <br /> and responsible mining practices.
         </p>
        
@@ -482,136 +498,208 @@ export default function Main() {
         </div>
       ))}
     </div>
-    <div className="open-pit-mining-planning-container p-8">
-      <h2 className="text-2xl font-bold mb-4">Open Pit Mining Planning</h2>
+   <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Open Pit Mining Planning
+      </h2>
 
-      {/* Slider for Mobile */}
-      <div className="md:hidden ">
-        <Slider {...sliderSettings}>
-          {cards.map((card, index) => (
-            <div key={index} className="card bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.description}</p>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
-        {cards.map((card, index) => (
-          <div key={index} className="card bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-    <div className="optimization-of-mining-system-container p-8">
-      <h2 className="text-2xl font-bold mb-4">Optimization of Mining System</h2>
 
-      {/* Slider for Mobile */}
-      <div className="md:hidden ">
-        <Slider {...sliderSettings}>
-          {cardss.map((card, index) => (
-            <div key={index} className="card bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.description}</p>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
-        {cardss.map((card, index) => (
-          <div key={index} className="card bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div className="underground-mine-planning-container p-8">
-      <h2 className="text-2xl font-bold mb-4">Underground Mine Planning</h2>
-
-      {/* Slider for Mobile */}
-      <div className="md:hidden ">
-        <Slider {...sliderSettings}>
-          {solution.map((card, index) => (
-            <div key={index} className="card bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.description}</p>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
-        {solution.map((card, index) => (
-          <div key={index} className="card bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div className="mine-design-wrapper overflow-hidden p-8">
-      <h2 className="text-2xl font-bold mb-4">Underground Mine Design and Methods</h2>
-
-      {/* Slider for Mobile */}
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
-          {minning.map((card, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+          {cards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-                <ul className="text-gray-600 text-sm list-disc ml-4">
-                  {card.description.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Optimization of Mining System
+      </h2>
 
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-3 gap-4">
-        {minning.map((card, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              <ul className="text-gray-600 text-sm list-disc ml-4">
-                {card.description.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {cardss.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Underground Mine Planning
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {solution.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {solution.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Underground Mine Design and Methods
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {minning.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {minning.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
     <div className="flex flex-col items-center p-8">
@@ -671,64 +759,108 @@ export default function Main() {
         </div>
       </div>
     </div>
-    <div className="project-evaluation-wrapper overflow-hidden p-8">
-      <h2 className="text-2xl font-bold mb-4">Project Evaluation</h2>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Project Evaluation
+      </h2>
 
-      {/* Slider for Mobile */}
-      <div className="md:hidden ">
-        <Slider {...sliderSettings}>
-          {proto.map((card, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-3 gap-8 mt-6">
-        {proto.map((card, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {proto.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1">{card.title}</h3>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-    <div className="geological-models-wrapper p-8">
-      <h2 className="text-2xl font-bold mb-4">Geological Models - Estimation of Mineral Resources & Reserves</h2>
 
-      {/* Slider for Mobile */}
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
-          {geologicalCards.map((card, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+          {proto.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <p className="text-gray-600 text-sm">{card.title}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Geological Models - Estimation of Mineral Resources & Reserves
+      </h2>
 
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {geologicalCards.map((card, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {geologicalCards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="p-4">
-              <p className="text-gray-600 text-sm">{card.title}</p>
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {geologicalCards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
 <div className="geology-wrapper p-6 space-y-8">
       <h2 className="text-2xl font-bold mb-4">Geology & Geometallurgy</h2>
 
@@ -782,35 +914,57 @@ export default function Main() {
         <li>Underground stability analysis.</li>
       </ul>
     </div>
-<div className="geological-models-wrapper p-8">
-      <h2 className="text-2xl font-bold mb-4">Geological Models - Estimation of Mineral Resources & Reserves</h2>
+<div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Geological Models - Estimation of Mineral Resources & Reserves
+      </h2>
 
-      {/* Slider for Mobile */}
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {lastcards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
       <div className="md:hidden">
         <Slider {...sliderSettings}>
-          {lastcards.map((card, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
+          {lastcards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
-                <p className="text-gray-600 text-sm">{card.title}</p>
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {lastcards.map((card, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={card.imageUrl} alt={card.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <p className="text-gray-600 text-sm">{card.title}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    </div>
 <div className="card-layout">
       {/* First row: Card on the left */}
       <div className="row left-align">
