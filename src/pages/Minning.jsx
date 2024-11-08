@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./minning.css";
 import Slider from 'react-slick';
 import group from '../assets/images/Group 145.png'
@@ -9,7 +9,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import logo from '../assets/images/logo (2).png'
 
 import background from '../assets/images/minning.png'
-import vector from '../assets/images/Vector 47.png'
+// import vector from '../assets/images/Vector47.png'
 
 import open1 from '../assets/images/open1.png'
 import open2 from '../assets/images/open2.png'
@@ -77,6 +77,20 @@ import minning8 from '../assets/images/minnings8.png'
 import minning9 from '../assets/images/minnings9.png'
 
 export default function Main() {
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 760);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const expertiseData = [
     'Strategic Mining Planning',
@@ -491,64 +505,163 @@ export default function Main() {
        
       </div>
     </main>
-    <div className="minning-grid-container">
-      {expertiseData.map((item, index) => (
-        <div key={index} className="grid-item">
-          <p>{item}</p>
-        </div>
-      ))}
-    </div>
-   <div className="container mx-auto px-4 py-12 relative overflow-hidden">
-      <img
-        className="electro-image-2 absolute right-0"
-        src={group}
-        alt=""
-      />
-      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
-      Open Pit Mining Planning
-      </h2>
-
-      {/* Desktop grid view */}
-      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {cards.map((solution, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-lg rounded-lg overflow-hidden"
-          >
-            <img
-              src={solution.imageUrl}
-              alt={solution.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
-              <p className="text-gray-600">{solution.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile view slider */}
-      <div className="md:hidden">
-        <Slider {...sliderSettings}>
-          {cards.map((solution, index) => (
-            <div
-              key={index}
-              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
-              <img
-                src={solution.imageUrl}
-                alt={solution.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
-                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+   
+    {isSmallScreen ? (
+        <div>
+          <div class="container-mining">
+            <div className="first row-cards">
+              <div class="mining-card">
+                <span>Strategic Mining Planning</span>
+              </div>
+              <div class="mining-card">
+                <span>Methods Optimization</span>
               </div>
             </div>
-          ))}
-        </Slider>
-      </div>
-    </div>
+            <div className="second row-cards">
+              <div class="mining-card">
+                <span>Quantitative and Qualitative Risk Analysis</span>
+              </div>
+              <div class="mining-card">
+                <span>
+                  Specialized report:
+                  <br />
+                  Jorc
+                  <br />
+                  SK1300
+                  <br />
+                  NI 43-101
+                </span>
+              </div>
+            </div>
+            <div className="first row-cards">
+              <div class="mining-card">
+                <span>
+                  Project Evaluation (Support in Geology - Geometallurgy and <br />
+                  Mining)
+                </span>
+              </div>
+              <div class="mining-card">
+                <span>Mineral Resource and Reserve Estimation</span>
+              </div>
+            </div>
+            <div className="second row-cards">
+              <div class="mining-card">
+                <span>Software support and implementation</span>
+              </div>
+              <div class="mining-card">
+                <span>
+                  Conceptual, Prefeasibility and Feasibility Studies, Due 
+                  Diligence and Audits
+                </span>
+              </div>
+            </div>
+            <div className="first row-cards">
+              <div class="mining-card">
+                <span>Mining GIS Modeling and Geomatics</span>
+              </div>
+              <div class="mining-card">
+                <span>Software support and implementation</span>
+              </div>
+            </div>
+            <div className="second row-cards">
+              <div class="mining-card">
+                <span>
+                  Conceptual, Prefeasibility and Feasibility Studies, Due
+                  Diligence and Audits
+                </span>
+              </div>
+              <div class="mining-card">
+                <span>Mining GIS Modeling and Geomatics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div className="frame-c">
+            <div className="frame-d">
+              <div className="frame-e">
+                <span className="strategic-mining-planing">
+                  Strategic Mining Planing
+                </span>
+              </div>
+            </div>
+            <div className="frame-f">
+              <div className="frame-10">
+                <span className="mining-methods-optimization">
+                  Mining Methods Optimization
+                </span>
+              </div>
+            </div>
+            <div className="frame-11">
+              <div className="frame-12">
+                <span className="risk-analysis">
+                  Quantitative and Qualitative Risk Analysis
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="frame-13">
+            <div className="frame-14">
+              <div className="frame-15">
+                <div className="specialized-report">
+                  <span className="specialized-report-16">
+                    Specialized report:
+                    <br />
+                  </span>
+                  <span className="jorc-sk-ni">
+                    Jorc
+                    <br />
+                    SK1300
+                    <br />
+                    NI 43-101
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="frame-17">
+              <div className="frame-18">
+                <span className="project-evaluation">
+                  Project Evaluation
+                  <br />
+                  (Support in Geology - Geometallurgy and <br /> Mining)
+                </span>
+              </div>
+            </div>
+            <div className="frame-19">
+              <div className="frame-1a">
+                <span className="resource-reserve-estimation">
+                  Mineral Resource and Reserve Estimation
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="frame-1b">
+            <div className="frame-1c">
+              <div className="frame-1d">
+                <span className="software-support-implementation">
+                  Software support and implementation
+                </span>
+              </div>
+            </div>
+            <div className="frame-1e">
+              <div className="frame-1f">
+                <span className="feasibility-studies">
+                  Conceptual, Prefeasibility and Feasibility Studies, Due <br />
+                  Diligence and Audits
+                </span>
+              </div>
+            </div>
+            <div className="frame-20">
+              <div className="frame-21">
+                <span className="mining-gis-modeling">
+                  Mining GIS Modeling and Geomatics
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     <div className="container mx-auto px-4 py-12 relative overflow-hidden">
       <img
         className="electro-image-2 absolute right-0"
@@ -703,62 +816,62 @@ export default function Main() {
       </div>
     </div>
     <div className="flex flex-col items-center p-8">
-      <h2 className="text-2xl font-bold mb-8">Quantitative Risk Analysis (QRA)</h2>
+        <h2 className="text-2xl font-bold mb-8">
+          Quantitative Risk Analysis (QRA)
+        </h2>
 
-      {/* Flow chart container */}
-      <div  className="flex first-row ">
-        
-        {/* Row 1 - First two cards */}
-        <div className="relative flex flex-col items-center">
-          <div className="bg-white card-circle shadow-lg rounded-lg p-4 text-center md:w-48 w-32">
-            <p>Modeling of factors <br />affecting the mining plan</p>
+        <div className="circle-data">
+          <div className="flex-row-ee">
+            <div className="frame-b4">
+              <div className="frame-b5">
+                <span className="span-b6">
+                  Modeling of <br /> factors affecting <br /> the mining plan
+                </span>
+              </div>
+            </div>
+            <div className="frame-b7">
+              <div className="frame-b8">
+                <span className="span-b9">
+                  Risk estimation and <br /> degree of reliability <br /> of the mining plan
+                </span>
+              </div>
+            </div>
+            <div className="vector" />
           </div>
-          {/* Arrow pointing to next card in the row */}
-          <div className="absolute arrow-first top-1/2 right-[-120px] ">
-            <div className="w-4 h-4 md:w-8 h-8 border-b-2 border-r-2 rotation border-black"></div>
+          <div className="flex-row-efa">
+            <div className="vector-ba" />
+            <div className="vector-bb" />
           </div>
-        </div>
-        
-        <div className="relative flex flex-col items-center">
-          <div className="bg-white card-circle  shadow-lg rounded-lg p-4 text-center md:w-48 w-32 ">
-            <p>Risk estimation and <br /> degree of reliability of <br /> the mining plan</p>
+          <div className="flex-row">
+            <div className="frame-bc">
+              <div className="frame-bd">
+                <span className="modeling-factors-mining">
+                  Modeling of <br /> factors affecting <br /> the mining plan
+                </span>
+              </div>
+            </div>
+            <div className="frame-be">
+              <div className="frame-bf">
+                <span className="risk-estimation-reliability">
+                  Risk estimation and <br /> degree of reliability <br /> of the mining plan
+                </span>
+              </div>
+            </div>
           </div>
-          {/* Arrow pointing down to next row */}
-          <div className="absolute bottom-[-40px] left-1/2 ">
-            <div className="w-4 h-4 md:w-8 h-8  border-b-2 border-r-2 rotation2 border-black"></div>
+          <div className="flex-row-c0">
+            <div className="vector-c1" />
+            <div className="vector-c2" />
+            <div className="frame-c3">
+              <div className="frame-c4">
+                <span className="construction-mathematical-model">
+                  Construction of the <br /> mathematical model <br /> for quantitative rish <br />
+                  analysis
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-        </div>
-<div  className="flex second-row mt-16 ">
-        {/* Row 2 - Next two cards */}
-        <div className="relative flex flex-col items-center">
-          <div className="bg-white card-circle  shadow-lg rounded-lg p-4 text-center md:w-48 w-32 ">
-            <p>Modeling of factors <br /> affecting the mining <br /> plan</p>
-          </div>
-          {/* Arrow pointing to next card in the row */}
-          <div  className=" arrow-third right-[-20px] ">
-            <div className="w-4 h-4 md:w-8 h-8  border-b-2 border-r-2 rotate border-black"></div>
-          </div>
-        </div>
-
-        <div className="relative flex flex-col items-center">
-          <div className="bg-white card-circle  shadow-lg rounded-lg p-4 text-center md:w-48 w-32 ">
-            <p>Risk estimation and <br /> degree of reliability of <br /> the mining plan</p>
-          </div>
-          {/* Arrow pointing down to the final row */}
-          <div style={{position:'absolute', left:'6%'}} className="absolute bottom-[-75px]  ">
-            <div className="w-4 h-4 md:w-8 h-8  border-b-2 border-r-2 rotate1 border-black"></div>
-          </div>
-        </div>
-        </div>
-
-      {/* Row 3 - Single card centered */}
-      <div  className="relative flex flex-col items-center mt-8">
-        <div  className="bg-white card-circle  third-row shadow-lg rounded-lg p-4 text-center md:w-48 w-32">
-          <p>Construction of the mathematical model for quantitative risk analysis</p>
         </div>
       </div>
-    </div>
     <div className="container mx-auto px-4 py-12 relative overflow-hidden">
       <img
         className="electro-image-2 absolute right-0"
@@ -868,7 +981,7 @@ export default function Main() {
         <div key={index} className="flex flex-cols md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-6 border-b pb-4">
           <div className="flex-1">
             <h3 className="text-sm md:text-lg font-semibold mb-2">{section.title}</h3>
-            <ul  className="list-disc list-inside space-y-1  md:text-sm text-gray-600">
+            <ul  className="list-disc geology-list list-inside space-y-1  md:text-sm text-gray-600">
               {section.points.map((point, idx) => (
                 <li key={idx}>{point}</li>
               ))}
@@ -877,7 +990,7 @@ export default function Main() {
           <div className="flex-none">
             <span className="arrow">➔</span>
           </div>
-          <div className="flex-1 bg-gray-100 p-4 rounded-md shadow text-sm text-gray-600">
+          <div className="flex-1 geology-des bg-gray-100 p-4 rounded-md shadow  text-gray-600">
             {section.description}
           </div>
         </div>
@@ -898,21 +1011,21 @@ export default function Main() {
 
       <h2 className="sub-title">Geotechnical studies: preparation of stability analysis</h2>
       <p>Includes stability analysis in waste deposits, tailing dams, leach piles, foundations of process plants. Levels of conceptual, prefeasibility, feasibility, operations, and closure studies.</p>
-      <ul className="list">
+      <ol className="list1">
         <li>Program of geotechnical research and laboratory test.</li>
         <li>Physical stability analysis.</li>
         <li>Analysis of mining infrastructure foundations.</li>
         <li>Slope monitoring program.</li>
-      </ul>
+      </ol>
 
       <h2 className="sub-title">Underground geomechanics</h2>
-      <ul className="list">
+      <ol className="list1">
         <li>Geotechnical research and laboratory testing program.</li>
         <li>Structural interpretation and analysis.</li>
         <li>Geotechnical modeling (geological, structural, rock mass, and hydrogeological model).</li>
         <li>Geomechanical zoning.</li>
         <li>Underground stability analysis.</li>
-      </ul>
+      </ol>
     </div>
 <div className="container mx-auto px-4 py-12 relative overflow-hidden">
       <img
@@ -965,25 +1078,45 @@ export default function Main() {
         </Slider>
       </div>
     </div>
-<div className="card-layout">
-      {/* First row: Card on the left */}
-      <div className="row left-align">
-        <div className="card">Provision of software and support for the acquisition of licences</div>
-      </div>
-      <img style={{position:'relative', left:'35px',width:'150px'}} src={vector} alt="" />
+ <div class="container-mine-last">
+ <h2 className=" text-3xl service-solution md:mt-16 font-bold mb-8" >Software and Developments</h2>
+          <div class="frame-121">
+            <div class="frame-122">
+              <div class="image-123"></div>
+              <span class="software-acquisition">
+                Provision of software and support for the acquisition of
+                licences
+              </span>
+            </div>
+          </div>
 
-      {/* Second row: Card in the center */}
-      <div className="row center-align">
-        <div className="card"> On-line consulting and support of the applications under concession</div>
-       
-      </div>
-      <img style={{position:'relative', left:'50%',width:'150px'}} src={vector} alt="" />
-      {/* Third row: Card on the right */}
-      <div className="row right-align">
-        <div className="card">Contribution to new developments and applications in mining</div>
-        
-      </div>
-    </div>
+          <div class="flex-row-cbe">
+            <div class="vector-127"></div>
+
+            <div class="frame-124">
+              <div class="frame-125">
+                <div class="image-126"></div>
+                <span class="online-consulting">
+                  On-line consulting and support of the applications under
+                  concession
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-row-ff">
+            <div class="vector-12b"></div>
+
+            <div class="frame-128">
+              <div class="frame-129">
+                <div class="image-12a"></div>
+                <span class="contribution-mining">
+                  Contribution to new developments and applications in mining
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
     <div className="banner">
       <div className="content">
         <p className="text">
