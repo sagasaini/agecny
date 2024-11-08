@@ -92,17 +92,17 @@ export default function Main() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const expertiseData = [
-    'Strategic Mining Planning',
-    'Mining Methods Optimization',
-    'Quantitative and Qualitative Risk Analysis',
-    'Specialized report: \n• Jorc \n• S-K1300 \n• NI 43-101',
-    'Project Evaluation (Support in Geology - Geometallurgy and Mining)',
-    'Mineral Resource and Reserve Estimation',
-    'Software support and implementation',
-    'Conceptual, Prefeasibility and Feasibility Studies, Due Diligence and Audits',
-    'Mining GIS Modeling and Geomatics',
-  ];
+  // const expertiseData = [
+  //   'Strategic Mining Planning',
+  //   'Mining Methods Optimization',
+  //   'Quantitative and Qualitative Risk Analysis',
+  //   'Specialized report: \n• Jorc \n• S-K1300 \n• NI 43-101',
+  //   'Project Evaluation (Support in Geology - Geometallurgy and Mining)',
+  //   'Mineral Resource and Reserve Estimation',
+  //   'Software support and implementation',
+  //   'Conceptual, Prefeasibility and Feasibility Studies, Due Diligence and Audits',
+  //   'Mining GIS Modeling and Geomatics',
+  // ];
 
 
   const sliderSettings = {

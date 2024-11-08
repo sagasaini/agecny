@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import mapImage from '../assets/images/image 28.png'; // Replace with the actual path to your image
+// import mapImage from '../assets/images/image 28.png'; // Replace with the actual path to your image
 import './responsive.css'
 import group from '../assets/images/Group 111.png'
 

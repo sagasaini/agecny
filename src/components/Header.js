@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaInstagram } from "react-icons/fa6";
-import { FaTiktok } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa6";
+// import { FaInstagram } from "react-icons/fa6";
+// import { FaTiktok } from "react-icons/fa";
+// import { FaLinkedinIn } from "react-icons/fa6";
 
 import group from '../assets/images/Group 111.png'
 
