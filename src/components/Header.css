@@ -1,7 +1,7 @@
 .rectangle {
     position: relative;
     width: 100%; /* Make it responsive */
-    height: 124px;
+    height: 110px;
     margin: 0;
     background: #ffffff;
     z-index: 3;

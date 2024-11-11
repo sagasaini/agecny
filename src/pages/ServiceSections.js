@@ -18,7 +18,7 @@ const ServiceSections = () => {
 
   return (
     <div className="services grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4">
-    <div style={{top:'125px',height:'85%'}} className="mask-group"></div>
+    <div style={{top:'110px',height:'85%'}} className="mask-group-1"></div>
       <img className='service-image' style={{ position: 'absolute', right: '0', zIndex: '2' }} src={group} alt="" />
       <img className='service-image-2' style={{ position: 'absolute', left: '0', zIndex: '2', bottom: '10px' }} src={group} alt="" />
       {services.map((service, index) => (
@@ -35,7 +35,7 @@ const ServiceSections = () => {
         >
           <div style={{marginBottom:'50%'}} className="bg-opacity-50 service-bottom  p-4 rounded-lg">
             <h2  style={{position: 'relative',
-    zIndex: '3',textAlign:'center'}} className="title  font-bold mb-4">{service.title}</h2>
+    zIndex: '3',textAlign:'center',lineHeight: '40px'}} className="title  font-bold mb-4">{service.title}</h2>
             <Link to={service.link}>
               <button style={{ background: '#E8E3AC',position:'relative', zIndex:'99' }} className="text-black service-button font-semibold py-2 px-4 rounded-full hover:bg-yellow-400">
                 See More

@@ -105,11 +105,12 @@ const Electromachanical = () => {
 
   return (
     <>
-     <main className="relative bg-cover bg-center "  style={{ backgroundImage: `url(${background})` ,    opacity: '0.9' , height:'125vh'}}>
+     <main className="relative bg-cover  bg-center "  style={{ backgroundImage: `url(${background})` ,     height:'125vh'}}>
+     <div style={{height:'100%'}} className="mask-group"></div>
     <img className='electro-image' style={{position:'absolute', right:'0'}} src={group} alt="" />
     <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
       <div  className="absolute inset-0 bg-black opacity-50"></div>
-      <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-16 lg:p-16 text-left">
+      <div style={{position :'absolute', bottom:'40px',zIndex:'2'}} className="relative electro-heading  text-white p-4 md:p-16 lg:p-16 text-left">
         <h1 style={{fontSize:'35px'}} className="electro-title font-bold">Electromechanical, energy and automation</h1>
         <p style={{fontSize:'48px'}}  className="mt-4 electro-des italic align-left">
         Powering innovation where <br /> precision meets performance.
@@ -132,7 +133,7 @@ const Electromachanical = () => {
         {Solutions.map((solution, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg overflow-hidden"
+            className="bg-white text-center shadow-lg rounded-lg overflow-hidden"
           >
             <img
               src={solution.imageUrl}
@@ -239,24 +240,7 @@ const Electromachanical = () => {
         </div>
       </div>
     </div>
-    <div className="banner">
-    
-      <div className="content">
-        <p className="text">
-          DARAT is a saudi-based corporation dedicated to the Saudi 2030 vision, offering various integrated solutions that encompass top-tier services and high end products.
-        </p>
-        <div className="logo-section">
-          <h1 className="logo">
-            <img style={{width:'50%'}} src={logo} alt="" />
-          </h1>
-          <div className="flex social-media space-x-4">
-        <a href="#instagram" className="text-white text-xl"><FaInstagram /></a>
-        <a href="#instagram" className="text-white text-xl"><FaTiktok /></a>
-        <a href="#linkedin" className="text-white text-xl"><FaLinkedinIn /></a>
-      </div>
-        </div>
-      </div>
-    </div>
+   
     </>
 
   );

@@ -493,13 +493,14 @@ export default function Main() {
 
   return (
    <>
- <main className="relative bg-cover bg-center "  style={{ backgroundImage: `url(${background})` ,    opacity: '0.9' , height:'125vh'}}>
+ <main className="relative bg-cover  bg-center "  style={{ backgroundImage: `url(${background})`  , height:'125vh'}}>
+ <div style={{height:'100%'}} className="mask-group"></div>
     <img className='electro-image' style={{position:'absolute', right:'0'}} src={group} alt="" />
     <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
       <div  className="absolute inset-0 bg-black opacity-50"></div>
       <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-8 lg:p-8 text-left">
-        <h1 style={{fontSize:'35px'}} className="it-title font-bold">Mining</h1>
-        <p style={{fontSize:'48px'}} className="mt-4 italic it-des align-left">
+        <h1 style={{fontSize:'35px'}} className="it-title md:ml-8 lg:ml-16 font-bold">Mining</h1>
+        <p style={{fontSize:'48px'}} className="mt-4 italic it-des md:ml-8 lg:ml-16 align-left">
         Driving growth through innovation, efficiency, <br /> and responsible mining practices.
         </p>
        
@@ -974,7 +975,7 @@ export default function Main() {
         </Slider>
       </div>
     </div>
-<div className="geology-wrapper p-6 space-y-8">
+<div className="container geology-wrapper p-6 space-y-8">
       <h2 className="text-2xl font-bold mb-4">Geology & Geometallurgy</h2>
 
       {sections.map((section, index) => (

@@ -45,7 +45,7 @@ button {
   /* gap: 226px; */
   position: relative;
   /* width: 1174.53px; */
-  margin: 36px 0 0 52.902px;
+  margin: 36px 52.902px 0 52.902px;
   z-index: 423;
 }
 .clip-path-group {
@@ -319,6 +319,18 @@ button {
   width: 100%;
   margin: 73px 0 0 101px;
   z-index: 7;
+}
+
+@media (min-width:1024px){
+  .frame-c{
+    margin-left: 150px ;
+  }
+}
+
+@media (min-width:1440px){
+  .frame-c{
+    margin-left: 200px ;
+  }
 }
 .frame-d {
   display: flex;
@@ -632,6 +644,19 @@ button {
   margin: 39px 0 0 101px;
   z-index: 27;
 }
+
+@media (min-width:1024px){
+  .frame-1b{
+    margin-left: 170px ;
+  }
+}
+
+@media (min-width:1440px){
+  .frame-1b{
+    margin-left: 220px ;
+  }
+}
+
 .frame-1c {
   display: flex;
   flex-direction: column;
@@ -3424,7 +3449,7 @@ button {
   position: relative;
   width: 904px;
   height: 143px;
-  margin: 41.543px 0 0 174px;
+  margin: 41.543px 0 0 110px;
   z-index: 330;
 }
 .frame-bc {
@@ -6679,7 +6704,7 @@ padding: 5px;
 }
 
 .geology-wrapper {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
