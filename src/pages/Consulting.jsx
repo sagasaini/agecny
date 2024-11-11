@@ -50,7 +50,7 @@ import lastcard4 from "../assets/images/lastcard4.png";
 import lastcard5 from "../assets/images/lastcard5.png";
 import lastcard6 from "../assets/images/lastcard6.png";
 import lastcard7 from "../assets/images/lastcard7.png";
-import Graident from "../assets/home/1.png";
+// import Graident from "../assets/home/1.png";
 
 import background from "../assets/images/consulting.png";
 
