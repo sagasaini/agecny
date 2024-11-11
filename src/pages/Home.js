@@ -2,7 +2,7 @@ import React from "react";
 import "./responsive.css";
 import group from "../assets/images/Group 111.png";
 import background from "../assets/images/background.png";
-import Graident from "../assets/home/HOME.png";
+// import Graident from "../assets/home/HOME.png";
 import { Link } from "react-router-dom";
 const Home = () => {
   return (

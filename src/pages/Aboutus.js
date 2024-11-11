@@ -1,7 +1,7 @@
 import React from "react";
 import group from "../assets/images/Group 111.png";
 import background from "../assets/home/aboutus.png";
-import Graident from "../assets/home/HOME.png";
+// import Graident from "../assets/home/HOME.png";
 
 import "./responsive.css";
 
