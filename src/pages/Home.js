@@ -13,13 +13,13 @@ const Home = () => {
         style={{
           backgroundImage: `url(${background})`,
           // opacity: "0.9",
-          height: "125vh",
+          // height: "75vh",
         }}
       >
       <div style={{height:'100%'}} className="mask-group"></div>
         <img
           className="home-image"
-          style={{ position: "absolute", right: "0" }}
+          style={{ position: "absolute", right: "0" ,zIndex:'2'}}
           src={group}
           alt=""
         />
@@ -49,12 +49,14 @@ const Home = () => {
             FOR YOUR BUSINESS
           </h2>
           <p
-            style={{ fontSize: "20px", width: "50%" }}
+            style={{ fontSize: "20px" }}
             className="mt-4 home-description align-left"
           >
-            DARAT is a Saudi-based corporation dedicated to the Saudi 2030
-            vision, offering various integrated solutions that encompass
-            top-tier services and high-end products.
+            DARAT is a Saudi-based corporation dedicated to the 
+            <span className="hidden md:inline"> <br /> </span>
+            Saudi 2030 vision, offering various integrated solutions 
+            <span className="hidden md:inline"> <br /> </span>
+            that encompass top-tier services and high-end products.
           </p>
           {/* <div className="flex justify-center mt-6">
           <span className="h-2 w-2 bg-white rounded-full mx-1"></span>

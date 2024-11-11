@@ -395,7 +395,7 @@ export default function IT() {
             style={{ fontSize: "48px" }}
             className="mt-4 it-des italic md:ml-8 lg:ml-16  align-left"
           >
-            Driving the future with seamless connectivity and cutting-edge
+            Driving the future with seamless <span className="hidden md:inline"> <br /> </span>connectivity and cutting-edge
             solutions.
           </p>
         </div>
@@ -870,7 +870,7 @@ export default function IT() {
         src={group}
         alt=""
       />
-      <div className="drones-section flex flex-col md:flex-row items-center p-8 ">
+      <div className="container m-auto drones-section flex flex-col md:flex-row items-center p-8 ">
         {/* Text Section */}
         <div className="md:w-1/2    p-4">
           <h2 className=" main-margin text-2xl font-bold mb-4">Drones</h2>

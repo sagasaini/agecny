@@ -111,9 +111,10 @@ const Electromachanical = () => {
     <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
       <div  className="absolute inset-0 bg-black opacity-50"></div>
       <div style={{position :'absolute', bottom:'40px',zIndex:'2'}} className="relative electro-heading  text-white p-4 md:p-16 lg:p-16 text-left">
-        <h1 style={{fontSize:'35px'}} className="electro-title font-bold">Electromechanical, energy and automation</h1>
-        <p style={{fontSize:'48px'}}  className="mt-4 electro-des italic align-left">
-        Powering innovation where <br /> precision meets performance.
+        <h1 style={{fontSize:'35px'}} className="electro-title md:ml-8 lg:ml-16 font-bold">Electromechanical, energy and automation</h1>
+        <p style={{fontSize:'48px'}}  className="mt-4 md:ml-8 lg:ml-16 electro-des italic align-left">
+        Powering innovation where 
+        <span className="hidden md:inline"> <br /> </span> precision meets performance.
         </p>
        
       </div>

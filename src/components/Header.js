@@ -109,7 +109,7 @@ const Header = () => {
             CONTACT US
           </Link>
         </div>
-        <div className="group-8" />
+        <Link to="/" onClick={() => handleSelect("")}> <div className="group-8" /> </Link>
       </div>
     </div>
   );

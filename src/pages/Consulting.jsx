@@ -384,7 +384,7 @@ const Consulting = () => {
             style={{ fontSize: "48px" }}
             className="mt-4 md:ml-8 lg:ml-16 it-des italic  align-left"
           >
-            Unlocking potential with AI, data labeling, and software tailored to
+            Unlocking potential with AI, data labeling, <span className="hidden md:inline"> <br /> </span> and software tailored to
             your goals.
           </p>
         </div>
@@ -974,13 +974,15 @@ const Consulting = () => {
         </header>
         <main className="apex-main-content ">
           <img src={apex2} alt="APEX Logo" className="apex-logo-img-1" />
-          <h2 className="apex-title -left">Business Management Software</h2>
+          <div className="text-s">
+          <h2 className="apex-title text-left">Business Management Software</h2>
           <p className="apex-description">
             APEX is a comprehensive solution with modules for project
             management, procurement, finance, CRM, HR, inventory, and
             e-commerce. Streamline your operations and improve efficiency with
             our all-in-one software.
           </p>
+          </div>
         </main>
             
       </div>

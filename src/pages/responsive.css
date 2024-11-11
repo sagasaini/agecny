@@ -29,6 +29,20 @@
   font-size: 18px;
   text-align: right;
 }
+@media (max-width:767px){
+  .about-us-image-1{
+    width: 70% ;
+    transform: rotate(90deg);
+    left: -80px !important;
+    bottom: 65px !important;
+  }
+  .about-us-image{
+    width: 70% ;
+    transform: rotate(-90deg);
+    right: -80px !important;
+      top: 50px;
+  }
+  }
 
 @media (max-width:768px){
 .home-text{
@@ -54,18 +68,8 @@
 .service-button{
   z-index: 2 !important;
 }
-.about-us-image-1{
-  width: 70% ;
-  transform: rotate(90deg);
-  left: -80px !important;
-  bottom: 65px !important;
-}
-.about-us-image{
-  width: 70% ;
-  transform: rotate(-90deg);
-  right: -80px !important;
-    top: 50px;
-}
+
+
 .map-image{
   order: 1;
 }
@@ -133,7 +137,7 @@ font-size: 28px !important;
 
 }
 
-@media(max-width:1024px){
+@media(min-width:1024px){
   .backgroun-image-all{
     height: 75vh;
   }

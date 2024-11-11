@@ -35,7 +35,7 @@
   }
 
   .services{
-    height: 85vh;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .mask-group-1 {
@@ -70,15 +70,23 @@
         font-size: 30px !important;
     }
     .services{
+      grid-template-columns: repeat(1, minmax(0, 1fr));
         height: 200vh !important;
     }
     .mask-group-1{
       height: 200vh !important;
     }
+    
+     
+   
+  }
+  
+  @media (max-width:768px){
     .service-image{
       transform: rotate(-90deg);
       position: absolute;
       left: 37%;
+      
     }
     
       .service-image-2{
@@ -89,6 +97,23 @@
         transform: rotate(90deg);
         left: none !important;
       }
-   
   }
-  
+
+  @media(max-width:768px){
+    .services, .mask-group-1{
+      height: 100vh;
+    }
+    
+    }
+    
+    @media(min-width:1024px){
+      .services, .mask-group-1{
+        height: 75vh;
+      }
+      }
+    
+      @media(min-width:1440px){
+        .services, .mask-group-1{
+          height: 79vh;
+        }
+        }

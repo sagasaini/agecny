@@ -18,7 +18,7 @@ const ServiceSections = () => {
 
   return (
     <div className="services grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4">
-    <div style={{top:'110px',height:'85%'}} className="mask-group-1"></div>
+    <div style={{top:'110px'}} className="mask-group-1"></div>
       <img className='service-image' style={{ position: 'absolute', right: '0', zIndex: '2' }} src={group} alt="" />
       <img className='service-image-2' style={{ position: 'absolute', left: '0', zIndex: '2', bottom: '10px' }} src={group} alt="" />
       {services.map((service, index) => (
