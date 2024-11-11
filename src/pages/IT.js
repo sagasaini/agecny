@@ -373,7 +373,7 @@ export default function IT() {
       <div style={{height:'100%'}} className="mask-group"></div>
         <img
           className="electro-image"
-          style={{ position: "absolute", right: "0" }}
+          style={{ position: "absolute", right: "0",zIndex:'2' }}
           src={group}
           alt=""
         />
