@@ -1118,23 +1118,7 @@ export default function Main() {
             </div>
           </div>
         </div>
-    <div className="banner">
-      <div className="content">
-        <p className="text">
-          DARAT is a saudi-based corporation dedicated to the Saudi 2030 vision, offering various integrated solutions that encompass top-tier services and high end products.
-        </p>
-        <div className="logo-section">
-          <h1 className="logo">
-            <img style={{width:'50%'}} src={logo} alt="" />
-          </h1>
-          <div className="flex social-media space-x-4">
-        <a href="#instagram" className="text-white text-xl"><FaInstagram /></a>
-        <a href="#instagram" className="text-white text-xl"><FaTiktok /></a>
-        <a href="#linkedin" className="text-white text-xl"><FaLinkedinIn /></a>
-      </div>
-        </div>
-      </div>
-    </div>
+  
    </>
   );
 }
